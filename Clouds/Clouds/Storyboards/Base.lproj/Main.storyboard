@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cloud Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CloudHomeViewController" customModule="Clouds" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jlv-gr-E4E">
+                                <rect key="frame" x="20" y="44" width="374" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="7Jd-tZ-Nnm"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j5p-9V-NFF">
+                                <rect key="frame" x="20" y="134" width="374" height="728"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uQm-Me-xHp">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="728"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="427" id="a6q-5n-tT0">
+                                                <rect key="frame" x="0.0" y="28" width="374" height="427"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a6q-5n-tT0" id="HL4-gZ-xgO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="426.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPr-pa-pDD">
+                                                            <rect key="frame" x="20" y="25" width="334" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured Cloud" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aw-VE-gDx">
+                                                            <rect key="frame" x="20" y="75" width="334" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From National Greographic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oor-iJ-RB2">
+                                                            <rect key="frame" x="20" y="108" width="334" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lukasz-lada-unsplash-cloud" translatesAutoresizingMaskIntoConstraints="NO" id="PMj-d2-n8f">
+                                                            <rect key="frame" x="20" y="147" width="334" height="250"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="250" id="60i-Hs-IVQ"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="3aw-VE-gDx" firstAttribute="top" secondItem="VPr-pa-pDD" secondAttribute="bottom" constant="20" id="2dF-Tz-gBP"/>
+                                                        <constraint firstItem="VPr-pa-pDD" firstAttribute="trailing" secondItem="HL4-gZ-xgO" secondAttribute="trailingMargin" id="CSV-JB-qzY"/>
+                                                        <constraint firstItem="3aw-VE-gDx" firstAttribute="trailing" secondItem="HL4-gZ-xgO" secondAttribute="trailingMargin" id="PD3-Df-ROV"/>
+                                                        <constraint firstItem="VPr-pa-pDD" firstAttribute="top" secondItem="HL4-gZ-xgO" secondAttribute="topMargin" constant="14" id="PbX-fb-Qry"/>
+                                                        <constraint firstItem="oor-iJ-RB2" firstAttribute="leading" secondItem="HL4-gZ-xgO" secondAttribute="leadingMargin" id="PrG-Ii-2jZ"/>
+                                                        <constraint firstItem="oor-iJ-RB2" firstAttribute="top" secondItem="3aw-VE-gDx" secondAttribute="bottom" constant="12" id="RIc-fo-CgO"/>
+                                                        <constraint firstItem="PMj-d2-n8f" firstAttribute="top" secondItem="oor-iJ-RB2" secondAttribute="bottom" constant="18" id="W9l-dE-dtE"/>
+                                                        <constraint firstItem="VPr-pa-pDD" firstAttribute="leading" secondItem="HL4-gZ-xgO" secondAttribute="leadingMargin" id="ZNK-WP-pdo"/>
+                                                        <constraint firstItem="oor-iJ-RB2" firstAttribute="trailing" secondItem="HL4-gZ-xgO" secondAttribute="trailingMargin" id="a2Y-Dc-PVP"/>
+                                                        <constraint firstItem="PMj-d2-n8f" firstAttribute="leading" secondItem="HL4-gZ-xgO" secondAttribute="leadingMargin" id="aA9-Xe-cY6"/>
+                                                        <constraint firstItem="PMj-d2-n8f" firstAttribute="trailing" secondItem="HL4-gZ-xgO" secondAttribute="trailingMargin" id="wAc-N0-0Mt"/>
+                                                        <constraint firstItem="3aw-VE-gDx" firstAttribute="leading" secondItem="HL4-gZ-xgO" secondAttribute="leadingMargin" id="xGd-VP-J5u"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="uQm-Me-xHp" firstAttribute="leading" secondItem="j5p-9V-NFF" secondAttribute="leading" id="T9e-Yw-jw3"/>
+                                    <constraint firstAttribute="bottom" secondItem="uQm-Me-xHp" secondAttribute="bottom" id="TfX-08-cnK"/>
+                                    <constraint firstAttribute="trailing" secondItem="uQm-Me-xHp" secondAttribute="trailing" id="f12-6W-gcr"/>
+                                    <constraint firstItem="uQm-Me-xHp" firstAttribute="top" secondItem="j5p-9V-NFF" secondAttribute="top" id="rpJ-M5-A9v"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="j5p-9V-NFF" secondAttribute="bottom" id="167-lZ-ehi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jlv-gr-E4E" secondAttribute="trailing" constant="20" id="5gb-NX-5SV"/>
+                            <constraint firstItem="j5p-9V-NFF" firstAttribute="top" secondItem="jlv-gr-E4E" secondAttribute="bottom" constant="20" id="C5n-lg-qa8"/>
+                            <constraint firstItem="j5p-9V-NFF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Dke-gp-ZBF"/>
+                            <constraint firstItem="jlv-gr-E4E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Jlo-Or-aQS"/>
+                            <constraint firstItem="jlv-gr-E4E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Tci-Ik-Me3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j5p-9V-NFF" secondAttribute="trailing" constant="20" id="t52-gi-uCQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="cloudLogoView" destination="jlv-gr-E4E" id="4zm-ut-YZI"/>
+                        <outlet property="cloudTableView" destination="uQm-Me-xHp" id="A8A-5Y-RGH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="lukasz-lada-unsplash-cloud" width="3445" height="2297"/>
+    </resources>
+</document>
