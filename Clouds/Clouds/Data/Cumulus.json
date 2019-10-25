@@ -1,0 +1,22 @@
+{
+"category" : "Low-level clouds",
+"subcategory" : "Cumulus",
+"name" : "Cumulus",
+"prefix" : "Cumulo meaning heap.",
+
+"composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
+"formation" : "Individual mound-like clouds with flat bottoms and round fluffy tops that grow vertically.",
+"description" : "Individual mound-like clouds with flat bottoms and round fluffy tops that grow vertically.",
+
+"weather" : "",
+"atmosphere" : "",
+
+"notes" : "",
+"facts" : ["", ""],
+"elevation" : 6500,
+"height" : 0,
+
+"warning" : "True",
+"warningMessage" : "Cumulus clouds are all capable of developing into more serious storm clouds.",
+
+}

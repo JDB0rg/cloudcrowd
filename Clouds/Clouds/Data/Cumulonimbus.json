@@ -1,0 +1,23 @@
+{
+"category" : "Low-level clouds",
+"subcategory" : "Cumulus",
+"nickname" : "Cumulonimbus",
+"prefix" : "Cumulo meaning heap.",
+
+"composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
+"formation" : "With enough atmospheric instability, moisture, and lift strong updrafts can develop in cumulus clouds leading to thunderstorm and heavy rain-producing formations",
+"description" : "Cumulus",
+
+"weather" : "",
+"atmosphere" : "",
+
+"notes" : "",
+"facts" : ["", ""],
+"elevation" : 6500,
+"height" : 0,
+
+"warning" : "True",
+"warningMessage" : "Cumulus clouds are all capable of developing into more serious storm clouds.",
+
+}
+

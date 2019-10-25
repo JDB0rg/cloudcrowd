@@ -8,7 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		111B0FBC231F6297001710F1 /* CloudHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B0FBB231F6297001710F1 /* CloudHomeTableViewCell.swift */; };
-		111B0FCF2331908E001710F1 /* Cumulus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B0FCE2331908E001710F1 /* Cumulus.swift */; };
+		112280C0235FB2AD001ED0AD /* CloudDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112280BF235FB2AD001ED0AD /* CloudDataController.swift */; };
+		112280C2235FB709001ED0AD /* Cumulus.json in Resources */ = {isa = PBXBuildFile; fileRef = 112280C1235FB709001ED0AD /* Cumulus.json */; };
+		112280C4235FB96F001ED0AD /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112280C3235FB96F001ED0AD /* Weather.swift */; };
+		112280C62360E3AF001ED0AD /* DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112280C52360E3AF001ED0AD /* DropShadow.swift */; };
+		112280C82360F356001ED0AD /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112280C72360F356001ED0AD /* Border.swift */; };
+		112280CA236271B5001ED0AD /* Cumulonimbus.json in Resources */ = {isa = PBXBuildFile; fileRef = 112280C9236271B5001ED0AD /* Cumulonimbus.json */; };
 		112D3FBA2298E7D6000F7DA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D3FB92298E7D6000F7DA6 /* AppDelegate.swift */; };
 		112D3FBC2298E7D6000F7DA6 /* CloudHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D3FBB2298E7D6000F7DA6 /* CloudHomeViewController.swift */; };
 		112D3FBF2298E7D6000F7DA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112D3FBD2298E7D6000F7DA6 /* Main.storyboard */; };
@@ -21,7 +26,12 @@
 
 /* Begin PBXFileReference section */
 		111B0FBB231F6297001710F1 /* CloudHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudHomeTableViewCell.swift; sourceTree = "<group>"; };
-		111B0FCE2331908E001710F1 /* Cumulus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cumulus.swift; sourceTree = "<group>"; };
+		112280BF235FB2AD001ED0AD /* CloudDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudDataController.swift; sourceTree = "<group>"; };
+		112280C1235FB709001ED0AD /* Cumulus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Cumulus.json; sourceTree = "<group>"; };
+		112280C3235FB96F001ED0AD /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		112280C52360E3AF001ED0AD /* DropShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropShadow.swift; sourceTree = "<group>"; };
+		112280C72360F356001ED0AD /* Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
+		112280C9236271B5001ED0AD /* Cumulonimbus.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Cumulonimbus.json; sourceTree = "<group>"; };
 		112D3FB62298E7D6000F7DA6 /* Clouds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clouds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		112D3FB92298E7D6000F7DA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		112D3FBB2298E7D6000F7DA6 /* CloudHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudHomeViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +76,8 @@
 		111B0FCD23319074001710F1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				111B0FCE2331908E001710F1 /* Cumulus.swift */,
+				112280C1235FB709001ED0AD /* Cumulus.json */,
+				112280C9236271B5001ED0AD /* Cumulonimbus.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -94,6 +105,7 @@
 				111B0FCD23319074001710F1 /* Data */,
 				112D3FCF2298E82C000F7DA6 /* Model */,
 				112D3FCE2298E821000F7DA6 /* Model Controllers */,
+				112280BF235FB2AD001ED0AD /* CloudDataController.swift */,
 				112D3FCC2298E7F1000F7DA6 /* Views */,
 				112D3FCB2298E7EA000F7DA6 /* View Controllers */,
 				112D3FCD2298E817000F7DA6 /* Helpers */,
@@ -123,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				112D3FD5229DE02A000F7DA6 /* Fonts.swift */,
+				112280C52360E3AF001ED0AD /* DropShadow.swift */,
+				112280C72360F356001ED0AD /* Border.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -139,6 +153,7 @@
 			children = (
 				112D3FD02298E849000F7DA6 /* Cloud.swift */,
 				112D3FD2229DA597000F7DA6 /* User.swift */,
+				112280C3235FB96F001ED0AD /* Weather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +225,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				112D3FC42298E7D8000F7DA6 /* LaunchScreen.storyboard in Resources */,
+				112280CA236271B5001ED0AD /* Cumulonimbus.json in Resources */,
+				112280C2235FB709001ED0AD /* Cumulus.json in Resources */,
 				112D3FC12298E7D8000F7DA6 /* Assets.xcassets in Resources */,
 				112D3FBF2298E7D6000F7DA6 /* Main.storyboard in Resources */,
 			);
@@ -222,12 +239,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112280C62360E3AF001ED0AD /* DropShadow.swift in Sources */,
+				112280C82360F356001ED0AD /* Border.swift in Sources */,
 				111B0FBC231F6297001710F1 /* CloudHomeTableViewCell.swift in Sources */,
+				112280C0235FB2AD001ED0AD /* CloudDataController.swift in Sources */,
 				112D3FD3229DA597000F7DA6 /* User.swift in Sources */,
 				112D3FD6229DE02A000F7DA6 /* Fonts.swift in Sources */,
+				112280C4235FB96F001ED0AD /* Weather.swift in Sources */,
 				112D3FBC2298E7D6000F7DA6 /* CloudHomeViewController.swift in Sources */,
 				112D3FD12298E849000F7DA6 /* Cloud.swift in Sources */,
-				111B0FCF2331908E001710F1 /* Cumulus.swift in Sources */,
 				112D3FBA2298E7D6000F7DA6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
