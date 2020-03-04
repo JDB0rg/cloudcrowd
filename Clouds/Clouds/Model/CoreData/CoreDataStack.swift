@@ -28,7 +28,7 @@ class CoreDataStack {
     class func saveContext() {
         let context = persistentContainer.viewContext
         
-        guard contexxt.hasChanges else {
+        guard context.hasChanges else {
             return
         }
         

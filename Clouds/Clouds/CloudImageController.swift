@@ -6,4 +6,14 @@
 //  Copyright © 2019 EmPact. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class CloudImageController {
+    
+    var localCloudImages: [UIImage] = []
+    var remoteCloudImages: [UIImage] = []
+    
+    func add(image: UIImage) {
+        localCloudImages.append(image)
+    }
+}

@@ -10,7 +10,7 @@
 		111B0FBC231F6297001710F1 /* CloudHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B0FBB231F6297001710F1 /* CloudHomeTableViewCell.swift */; };
 		112280C0235FB2AD001ED0AD /* CloudDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112280BF235FB2AD001ED0AD /* CloudDataController.swift */; };
 		112280C2235FB709001ED0AD /* Cumulus.json in Resources */ = {isa = PBXBuildFile; fileRef = 112280C1235FB709001ED0AD /* Cumulus.json */; };
-		112280C4235FB96F001ED0AD /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112280C3235FB96F001ED0AD /* Weather.swift */; };
+		112280C4235FB96F001ED0AD /* WeatherObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112280C3235FB96F001ED0AD /* WeatherObject.swift */; };
 		112280C62360E3AF001ED0AD /* DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112280C52360E3AF001ED0AD /* DropShadow.swift */; };
 		112280C82360F356001ED0AD /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112280C72360F356001ED0AD /* Border.swift */; };
 		112280CA236271B5001ED0AD /* Cumulonimbus.json in Resources */ = {isa = PBXBuildFile; fileRef = 112280C9236271B5001ED0AD /* Cumulonimbus.json */; };
@@ -19,16 +19,27 @@
 		112D3FBF2298E7D6000F7DA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112D3FBD2298E7D6000F7DA6 /* Main.storyboard */; };
 		112D3FC12298E7D8000F7DA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112D3FC02298E7D8000F7DA6 /* Assets.xcassets */; };
 		112D3FC42298E7D8000F7DA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112D3FC22298E7D8000F7DA6 /* LaunchScreen.storyboard */; };
-		112D3FD12298E849000F7DA6 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D3FD02298E849000F7DA6 /* Cloud.swift */; };
+		112D3FD12298E849000F7DA6 /* CloudObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D3FD02298E849000F7DA6 /* CloudObject.swift */; };
 		112D3FD3229DA597000F7DA6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D3FD2229DA597000F7DA6 /* User.swift */; };
 		112D3FD6229DE02A000F7DA6 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D3FD5229DE02A000F7DA6 /* Fonts.swift */; };
+		115EC65E23CD6957005FC18B /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115EC65D23CD6957005FC18B /* WeatherController.swift */; };
+		116F6D2723A048140094651F /* CloudImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116F6D2623A048140094651F /* CloudImageController.swift */; };
+		1193748B240F10B40060A3C6 /* Cloud+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1193748A240F10B40060A3C6 /* Cloud+Convenience.swift */; };
+		1193748D240F2CFC0060A3C6 /* IdentifyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1193748C240F2CFC0060A3C6 /* IdentifyCollectionViewCell.swift */; };
+		11AFA65C23FF6A2100159423 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AFA65B23FF6A2000159423 /* CoreDataStack.swift */; };
+		11AFA66023FF6CC300159423 /* Clouds.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11AFA65E23FF6CC300159423 /* Clouds.xcdatamodeld */; };
+		11AFA66223FF712B00159423 /* CloudPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AFA66123FF712B00159423 /* CloudPhotoViewController.swift */; };
+		11AFA66623FF7A5500159423 /* CloudPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AFA66523FF7A5500159423 /* CloudPhotoCollectionViewCell.swift */; };
+		11B2658D237CB94500006F61 /* IdentifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2658C237CB94500006F61 /* IdentifyViewController.swift */; };
+		11B2658F237CB97600006F61 /* CloudDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2658E237CB97600006F61 /* CloudDetailViewController.swift */; };
+		11B26597237E62DE00006F61 /* CloudData.json in Resources */ = {isa = PBXBuildFile; fileRef = 11B26596237E62DE00006F61 /* CloudData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		111B0FBB231F6297001710F1 /* CloudHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudHomeTableViewCell.swift; sourceTree = "<group>"; };
 		112280BF235FB2AD001ED0AD /* CloudDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudDataController.swift; sourceTree = "<group>"; };
 		112280C1235FB709001ED0AD /* Cumulus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Cumulus.json; sourceTree = "<group>"; };
-		112280C3235FB96F001ED0AD /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		112280C3235FB96F001ED0AD /* WeatherObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherObject.swift; sourceTree = "<group>"; };
 		112280C52360E3AF001ED0AD /* DropShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropShadow.swift; sourceTree = "<group>"; };
 		112280C72360F356001ED0AD /* Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
 		112280C9236271B5001ED0AD /* Cumulonimbus.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Cumulonimbus.json; sourceTree = "<group>"; };
@@ -39,9 +50,20 @@
 		112D3FC02298E7D8000F7DA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112D3FC32298E7D8000F7DA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		112D3FC52298E7D8000F7DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		112D3FD02298E849000F7DA6 /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
+		112D3FD02298E849000F7DA6 /* CloudObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudObject.swift; sourceTree = "<group>"; };
 		112D3FD2229DA597000F7DA6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		112D3FD5229DE02A000F7DA6 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		115EC65D23CD6957005FC18B /* WeatherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
+		116F6D2623A048140094651F /* CloudImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudImageController.swift; sourceTree = "<group>"; };
+		1193748A240F10B40060A3C6 /* Cloud+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cloud+Convenience.swift"; sourceTree = "<group>"; };
+		1193748C240F2CFC0060A3C6 /* IdentifyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyCollectionViewCell.swift; sourceTree = "<group>"; };
+		11AFA65B23FF6A2000159423 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		11AFA65F23FF6CC300159423 /* Clouds.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clouds.xcdatamodel; sourceTree = "<group>"; };
+		11AFA66123FF712B00159423 /* CloudPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudPhotoViewController.swift; sourceTree = "<group>"; };
+		11AFA66523FF7A5500159423 /* CloudPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		11B2658C237CB94500006F61 /* IdentifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyViewController.swift; sourceTree = "<group>"; };
+		11B2658E237CB97600006F61 /* CloudDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudDetailViewController.swift; sourceTree = "<group>"; };
+		11B26596237E62DE00006F61 /* CloudData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CloudData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +100,7 @@
 			children = (
 				112280C1235FB709001ED0AD /* Cumulus.json */,
 				112280C9236271B5001ED0AD /* Cumulonimbus.json */,
+				11B26596237E62DE00006F61 /* CloudData.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -105,7 +128,6 @@
 				111B0FCD23319074001710F1 /* Data */,
 				112D3FCF2298E82C000F7DA6 /* Model */,
 				112D3FCE2298E821000F7DA6 /* Model Controllers */,
-				112280BF235FB2AD001ED0AD /* CloudDataController.swift */,
 				112D3FCC2298E7F1000F7DA6 /* Views */,
 				112D3FCB2298E7EA000F7DA6 /* View Controllers */,
 				112D3FCD2298E817000F7DA6 /* Helpers */,
@@ -119,6 +141,9 @@
 			isa = PBXGroup;
 			children = (
 				112D3FBB2298E7D6000F7DA6 /* CloudHomeViewController.swift */,
+				11B2658C237CB94500006F61 /* IdentifyViewController.swift */,
+				11B2658E237CB97600006F61 /* CloudDetailViewController.swift */,
+				11AFA66123FF712B00159423 /* CloudPhotoViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -127,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				111B0FBB231F6297001710F1 /* CloudHomeTableViewCell.swift */,
+				11AFA66523FF7A5500159423 /* CloudPhotoCollectionViewCell.swift */,
+				1193748C240F2CFC0060A3C6 /* IdentifyCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,6 +171,9 @@
 		112D3FCE2298E821000F7DA6 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				112280BF235FB2AD001ED0AD /* CloudDataController.swift */,
+				116F6D2623A048140094651F /* CloudImageController.swift */,
+				115EC65D23CD6957005FC18B /* WeatherController.swift */,
 			);
 			name = "Model Controllers";
 			sourceTree = "<group>";
@@ -151,9 +181,11 @@
 		112D3FCF2298E82C000F7DA6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				112D3FD02298E849000F7DA6 /* Cloud.swift */,
+				11AFA65D23FF6C3900159423 /* CoreData */,
+				112D3FD02298E849000F7DA6 /* CloudObject.swift */,
 				112D3FD2229DA597000F7DA6 /* User.swift */,
-				112280C3235FB96F001ED0AD /* Weather.swift */,
+				112280C3235FB96F001ED0AD /* WeatherObject.swift */,
+				1193748A240F10B40060A3C6 /* Cloud+Convenience.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +196,15 @@
 				112D3FBD2298E7D6000F7DA6 /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		11AFA65D23FF6C3900159423 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				11AFA65B23FF6A2000159423 /* CoreDataStack.swift */,
+				11AFA65E23FF6CC300159423 /* Clouds.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +269,7 @@
 				112280CA236271B5001ED0AD /* Cumulonimbus.json in Resources */,
 				112280C2235FB709001ED0AD /* Cumulus.json in Resources */,
 				112D3FC12298E7D8000F7DA6 /* Assets.xcassets in Resources */,
+				11B26597237E62DE00006F61 /* CloudData.json in Resources */,
 				112D3FBF2298E7D6000F7DA6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,16 +281,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11AFA65C23FF6A2100159423 /* CoreDataStack.swift in Sources */,
 				112280C62360E3AF001ED0AD /* DropShadow.swift in Sources */,
 				112280C82360F356001ED0AD /* Border.swift in Sources */,
+				116F6D2723A048140094651F /* CloudImageController.swift in Sources */,
+				11AFA66623FF7A5500159423 /* CloudPhotoCollectionViewCell.swift in Sources */,
 				111B0FBC231F6297001710F1 /* CloudHomeTableViewCell.swift in Sources */,
+				11AFA66023FF6CC300159423 /* Clouds.xcdatamodeld in Sources */,
+				11B2658F237CB97600006F61 /* CloudDetailViewController.swift in Sources */,
 				112280C0235FB2AD001ED0AD /* CloudDataController.swift in Sources */,
 				112D3FD3229DA597000F7DA6 /* User.swift in Sources */,
 				112D3FD6229DE02A000F7DA6 /* Fonts.swift in Sources */,
-				112280C4235FB96F001ED0AD /* Weather.swift in Sources */,
+				112280C4235FB96F001ED0AD /* WeatherObject.swift in Sources */,
+				1193748D240F2CFC0060A3C6 /* IdentifyCollectionViewCell.swift in Sources */,
+				1193748B240F10B40060A3C6 /* Cloud+Convenience.swift in Sources */,
+				11AFA66223FF712B00159423 /* CloudPhotoViewController.swift in Sources */,
 				112D3FBC2298E7D6000F7DA6 /* CloudHomeViewController.swift in Sources */,
-				112D3FD12298E849000F7DA6 /* Cloud.swift in Sources */,
+				112D3FD12298E849000F7DA6 /* CloudObject.swift in Sources */,
 				112D3FBA2298E7D6000F7DA6 /* AppDelegate.swift in Sources */,
+				115EC65E23CD6957005FC18B /* WeatherController.swift in Sources */,
+				11B2658D237CB94500006F61 /* IdentifyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +500,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		11AFA65E23FF6CC300159423 /* Clouds.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				11AFA65F23FF6CC300159423 /* Clouds.xcdatamodel */,
+			);
+			currentVersion = 11AFA65F23FF6CC300159423 /* Clouds.xcdatamodel */;
+			path = Clouds.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 112D3FAE2298E7D6000F7DA6 /* Project object */;
 }

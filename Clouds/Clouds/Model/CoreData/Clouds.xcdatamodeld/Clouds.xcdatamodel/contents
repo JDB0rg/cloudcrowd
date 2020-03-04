@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="Cloud" representedClassName="Cloud" syncable="YES" codeGenerationType="class">
+        <attribute name="appearance" optional="YES" attributeType="String"/>
+        <attribute name="atmosphere" optional="YES" attributeType="String"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="composition" optional="YES" attributeType="String"/>
+        <attribute name="elevation" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="facts" optional="YES" attributeType="String"/>
+        <attribute name="formation" optional="YES" attributeType="String"/>
+        <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="message" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="prefix" optional="YES" attributeType="String"/>
+        <attribute name="subcategory" optional="YES" attributeType="String"/>
+        <attribute name="warning" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="photo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Photo" inverseName="cloud" inverseEntity="Photo"/>
+    </entity>
+    <entity name="Photo" representedClassName="Photo" syncable="YES" codeGenerationType="class">
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <relationship name="cloud" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cloud" inverseName="photo" inverseEntity="Cloud"/>
+    </entity>
+    <entity name="Weather" representedClassName="Weather" syncable="YES" codeGenerationType="class"/>
+    <elements>
+        <element name="Cloud" positionX="-63" positionY="-18" width="128" height="268"/>
+        <element name="Weather" positionX="-54" positionY="-9" width="128" height="43"/>
+        <element name="Photo" positionX="-36" positionY="9" width="128" height="73"/>
+    </elements>
 </model>

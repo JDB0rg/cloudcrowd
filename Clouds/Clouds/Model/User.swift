@@ -9,6 +9,7 @@
 import Foundation
 
 struct User {
+    var email: String
     var username: String
     var password: String
     var uuid: UUID

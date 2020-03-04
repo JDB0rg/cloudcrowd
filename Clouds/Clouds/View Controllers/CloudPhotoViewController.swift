@@ -7,16 +7,49 @@
 //
 
 import UIKit
+import CoreData
 
-class CloudPhotoViewController: UIViewController {
+class CloudPhotoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate{
 
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
-
+    // MARK: - Fetched Results Controller
+    lazy var fetchedResultsController: NSFetchedResultsController<Photo> = {
+        let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
+        fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "image", ascending: false) ]
+        
+        let moc = CoreDataStack.context
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                             managedObjectContext: moc,
+                                             sectionNameKeyPath: nil,
+                                             cacheName: nil)
+        frc.delegate = self
+        try? frc.performFetch()
+        return frc
+    }()
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return fetchedResultsController.fetchedObjects?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? CloudPhotoCollectionViewCell else {
+            NSLog("Error dequeueing cell")
+            return UICollectionViewCell()
+        }
+        
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 

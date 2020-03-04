@@ -10,4 +10,16 @@ import UIKit
 
 class IdentifyCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var CloudImageView: UIImageView!
+}
+
+extension IdentifyCollectionViewCell: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    
+        guard let image = info[.originalImage] as? UIImage else { return }
+        let processedImage = image
+        CloudImageView.image = processedImage
+        picker.dismiss(animated: true, completion: nil)
+    }
 }

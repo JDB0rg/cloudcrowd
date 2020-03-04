@@ -10,18 +10,39 @@ import Foundation
 
 class CloudDataController {
     
-    var cloudArray: [Cloud] = []
+    init() {
+        self.decodeClouds()
+    }
+    
+    var clouds: [CloudObject] = []
+    
+    var cloudDataArray: [String] = ["Cumulus", "Cumulonimbus"]
+    
+    func saveToPersistentStore() {
+        do {
+            try CoreDataStack.context.save()
+        } catch {
+            NSLog("Error saving managed object context: \(error)")
+        }
+    }
+    
+    func decodeClouds() {
+        readCloudJson("CloudData")
+        saveToPersistentStore()
+        
+    }
     
     func readCloudJson(_ fileName: String) {
-        
+
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
             NSLog("URL not useable")
             return }
-        
+
             do {
                 let cloudData = try Data(contentsOf: url)
-                let cloudObject = try JSONDecoder().decode(Cloud.self, from: cloudData)
-                cloudArray.append(cloudObject)
+                let decodedCloud = try JSONDecoder().decode([CloudObject].self, from: cloudData)
+                clouds = decodedCloud
+                saveToPersistentStore()
             } catch {
                 NSLog("Error reading Cloud data from JSON file")
             }
