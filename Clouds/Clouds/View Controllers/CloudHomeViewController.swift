@@ -19,18 +19,18 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var cloudLogoView: UIView!
     @IBOutlet weak var cloudTableView: UITableView!
     
+    var cloud: Cloud?
+    var photo: Photo?
+    
     var cloudController = CloudDataController()
     var weatherController = WeatherController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
         cloudTableView.separatorStyle = .none
         cloudTableView.delegate = self
         cloudTableView.dataSource = self
-        
-        print(cloudController.readCloudJson("CloudData"))
         
         //weatherController.fetchWeather(lon: 139, lat: 35)
     }
@@ -53,7 +53,6 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: - TableView Data Source Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         fetchedResultsController.fetchedObjects?.count ?? 0
-        //return cloudController.clouds.count
     }
     
     let reuseIdentifier = "CloudCell"
@@ -63,20 +62,38 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
         }
         
         let cloud = fetchedResultsController.object(at: indexPath)
-        //let cloud = cloudController.clouds[indexPath.row]
         
         cell.titleLabel.text = cloud.name
-        cell.subtitleLabel.text = cloud.category
-        cell.infoLabel.text = cloud.description
+        cell.subtitleLabel.text = cloud.subcategory
+        cell.infoLabel.text = cloud.formation
+        
+        let cloudImage = UIImage(data: photo?.image ?? Data())
+        cell.cloudImageView?.image = cloudImage
         
         setupCellTheme(cell)
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete)
+        {
+            let cloud = fetchedResultsController.object(at: indexPath)
+            let moc = CoreDataStack.context
+            moc.delete(cloud)
+            
+            do {
+                try moc.save()
+            } catch {
+                NSLog("Error saving deletion to managed object context: \(error)")
+                moc.reset()
+            }
+            tableView.reloadData()
+        }
+    }
+    
     // MARK: - Fetched Results Controller Delegate Methods
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        
         cloudTableView.beginUpdates()
     }
     
@@ -103,7 +120,6 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        
         cloudTableView.endUpdates()
     }
     
@@ -127,7 +143,7 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
         if segue.identifier == "showCloudDetail" {
             guard let cloudDetailVC = segue.destination as? CloudDetailViewController,
             let indexPath = cloudTableView.indexPathForSelectedRow else { return }
-            let cloud = cloudController.clouds[indexPath.row]
+            let cloud = fetchedResultsController.object(at: indexPath)
             cloudDetailVC.cloud = cloud
             cloudDetailVC.cloudController = cloudController
         }

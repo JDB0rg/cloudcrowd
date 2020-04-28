@@ -33,6 +33,8 @@
 		11B2658D237CB94500006F61 /* IdentifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2658C237CB94500006F61 /* IdentifyViewController.swift */; };
 		11B2658F237CB97600006F61 /* CloudDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2658E237CB97600006F61 /* CloudDetailViewController.swift */; };
 		11B26597237E62DE00006F61 /* CloudData.json in Resources */ = {isa = PBXBuildFile; fileRef = 11B26596237E62DE00006F61 /* CloudData.json */; };
+		8C28CADE2437E4E600633679 /* CloudImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28CADD2437E4E600633679 /* CloudImageDelegate.swift */; };
+		8C6F39192423202500A6F302 /* Identify+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F39182423202500A6F302 /* Identify+Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		11B2658C237CB94500006F61 /* IdentifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyViewController.swift; sourceTree = "<group>"; };
 		11B2658E237CB97600006F61 /* CloudDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudDetailViewController.swift; sourceTree = "<group>"; };
 		11B26596237E62DE00006F61 /* CloudData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CloudData.json; sourceTree = "<group>"; };
+		8C28CADD2437E4E600633679 /* CloudImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudImageDelegate.swift; sourceTree = "<group>"; };
+		8C6F39182423202500A6F302 /* Identify+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Identify+Image.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,8 @@
 				112D3FD5229DE02A000F7DA6 /* Fonts.swift */,
 				112280C52360E3AF001ED0AD /* DropShadow.swift */,
 				112280C72360F356001ED0AD /* Border.swift */,
+				8C6F39182423202500A6F302 /* Identify+Image.swift */,
+				8C28CADD2437E4E600633679 /* CloudImageDelegate.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -285,6 +291,7 @@
 				112280C62360E3AF001ED0AD /* DropShadow.swift in Sources */,
 				112280C82360F356001ED0AD /* Border.swift in Sources */,
 				116F6D2723A048140094651F /* CloudImageController.swift in Sources */,
+				8C28CADE2437E4E600633679 /* CloudImageDelegate.swift in Sources */,
 				11AFA66623FF7A5500159423 /* CloudPhotoCollectionViewCell.swift in Sources */,
 				111B0FBC231F6297001710F1 /* CloudHomeTableViewCell.swift in Sources */,
 				11AFA66023FF6CC300159423 /* Clouds.xcdatamodeld in Sources */,
@@ -294,6 +301,7 @@
 				112D3FD6229DE02A000F7DA6 /* Fonts.swift in Sources */,
 				112280C4235FB96F001ED0AD /* WeatherObject.swift in Sources */,
 				1193748D240F2CFC0060A3C6 /* IdentifyCollectionViewCell.swift in Sources */,
+				8C6F39192423202500A6F302 /* Identify+Image.swift in Sources */,
 				1193748B240F10B40060A3C6 /* Cloud+Convenience.swift in Sources */,
 				11AFA66223FF712B00159423 /* CloudPhotoViewController.swift in Sources */,
 				112D3FBC2298E7D6000F7DA6 /* CloudHomeViewController.swift in Sources */,

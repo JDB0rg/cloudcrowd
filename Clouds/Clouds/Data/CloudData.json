@@ -2,7 +2,7 @@
 
 {
 "category" : "Low-level clouds",
-"subcategory" : "Cumulus",
+"subcategory" : "Cumulus CloudData 1",
 "name" : "Cumulus",
 "prefix" : "Cumulo meaning heap.",
 
@@ -28,7 +28,7 @@
 
 {
 "category" : "Low-level clouds",
-"subcategory" : "Cumulus",
+"subcategory" : "Cumulus CloudData 2",
 "name" : "Cumulonimbus",
 "prefix" : "Cumulo meaning heap.",
 
@@ -39,6 +39,32 @@
 "weather" : {
     "precipitation" : "",
     "temperature" : "",
+},
+"atmosphere" : "",
+
+"notes" : "",
+"facts" : [""],
+
+"elevation" : 6500,
+"height" : 0,
+
+"warning" : true,
+"warningMessage" : "Cumulus clouds are all capable of developing into more serious storm clouds.",
+},
+
+{
+"category" : "Low-level clouds",
+"subcategory" : "Cumulus CloudData 2",
+"name" : "Straus",
+"prefix" : " Latin prefix strato-, meaning layer",
+
+"composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
+"formation" : "Warm moist air rises and depressurizes and settles lower to the ground according to ideal temperatures",
+"appearance" : "Develop horizontally in a flat uniform sheet formation resembling a gray layer of cloud cover with little to no precipitation or drizzle",
+
+"weather" : {
+    "precipitation" : "very little to no precipitation",
+    "temperature" : "varies",
 },
 "atmosphere" : "",
 

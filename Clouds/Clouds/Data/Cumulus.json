@@ -4,7 +4,7 @@
 "name" : "Cumulus",
 "prefix" : "Cumulo meaning heap.",
 
-"composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
+"composition" : "liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles",
 "formation" : "Individual mound-like clouds with flat bottoms and round fluffy tops that grow vertically.",
 "description" : "Individual mound-like clouds with flat bottoms and round fluffy tops that grow vertically.",
 
@@ -12,7 +12,7 @@
 "atmosphere" : "",
 
 "notes" : "",
-"facts" : ["", ""],
+"facts" : "", "",
 "elevation" : 6500,
 "height" : 0,
 

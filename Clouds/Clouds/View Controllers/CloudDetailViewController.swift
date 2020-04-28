@@ -12,7 +12,8 @@ class CloudDetailViewController: UIViewController {
 
     var cloudController: CloudDataController?
     
-    var cloud: CloudObject? {
+    var photo: Photo?
+    var cloud: Cloud? {
         didSet {
             updateViews()
         }
@@ -31,20 +32,21 @@ class CloudDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //let cloudData = cloudController?.readCloudJson("Cumulus")
     }
     
     private func updateViews() {
-        guard let cloud = cloud,
-        isViewLoaded else { return }
+        guard isViewLoaded else { return }
+        guard let cloud = cloud else { return }
         
-        nameLabel.text = cloud.name
+        nameLabel.text = "Real Cool Cloud Guy" //cloud.name
         subcategoryLabel.text = cloud.subcategory
         
         heightLabel.text = String(describing: cloud.height)
-        elevationLabel.text = String(describing: cloud.elevation)
-        let compString = cloud.composition.map({ $0 })
-        compositionLabel.text = "\(compString)"
+        elevationLabel.text = "Real tall like a few thousand feet or so" //String(describing: cloud.elevation)
+        compositionLabel.text = String(describing: cloud.composition)
+        
+//        let mainImage = UIImage(named: "lukasz-lada-unsplash-cloud")
+//        mainImageView.image = mainImage
     }
 
 }

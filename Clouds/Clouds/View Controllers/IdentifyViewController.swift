@@ -9,17 +9,23 @@
 import UIKit
 import CoreData
 
-class IdentifyViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, NSFetchedResultsControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CloudImageDelegate {
     
     // MARK: - Properties
-    private var comparisonImage: UIImage?
+    let context = CIContext(options: nil)
+    var comparisonImage: UIImage?
     var comparisonCell: IdentifyCollectionViewCell?
     var photo: Photo?
+    var cell: IdentifyCollectionViewCell?
+    
+    // MARK: - Controllers
+    let cloudImageController = CloudImageController()
     
     // MARK: - Outlets
     @IBOutlet weak var comparisonView: UIView!
     @IBOutlet weak var compareButton: UIButton!
     @IBOutlet weak var photoCollectionView: UICollectionView!
+    @IBOutlet weak var testImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,21 +34,38 @@ class IdentifyViewController: UIViewController, UIImagePickerControllerDelegate,
         photoCollectionView.dataSource = self
     }
     
+    func setCloudImage(on cell: IdentifyCollectionViewCell) {
+        //guard let indexPath = photoCollectionView.indexPath(for: cell) else { return }
+        guard let photo = photo else { return }
+        cloudImageController.createPhoto()
+    }
+    
     // MARK: - Actions
     @IBAction func addPhotoTapped(_ sender: Any) {
-        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
-            print("The photo library is unavailable")
-            return
-        }
-        
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.sourceType = .photoLibrary
-        present(picker, animated: true, completion: nil)
+        presentImagePickerController()
     }
     
     @IBAction func compareTapped(_ sender: Any) {
         
+    }
+        
+    // MARK: Collection View Controller Delegate
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+      fetchedResultsController.fetchedObjects?.count ?? 0
+    }
+
+    let reuseIdentifier = "ComparisonImageCell"
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+      guard var cell = cell else {
+          fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)")
+      }
+      cell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! IdentifyCollectionViewCell
+      
+      let comparisonImage = fetchedResultsController.object(at: indexPath)
+      let cellImage = UIImage(data: comparisonImage.image ?? Data())
+      cell.CloudImageView.image = cellImage
+      
+      return cell
     }
     
     // MARK: - Fetched Results Controller
@@ -60,52 +83,10 @@ class IdentifyViewController: UIViewController, UIImagePickerControllerDelegate,
         return frc
     }()
     
-    // MARK: UIImage Picker Controller Delegate
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        picker.dismiss(animated: true, completion: nil)
-        comparisonImage = info[.originalImage] as? UIImage
-        comparisonCell?.CloudImageView.image = comparisonImage
-        
-        let imageData = comparisonImage?.pngData()
-        guard let photo = photo else { return }
-        photo.image = imageData
-        CoreDataStack.saveContext()
-    }
-    
-    
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    // MARK: Collection View Controller Delegate
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        fetchedResultsController.fetchedObjects?.count ?? 0
-    }
-    
-    let reuseIdentifier = "ComparisonImageCell"
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? IdentifyCollectionViewCell else {
-            fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)")
-        }
-        let comparisonImage = fetchedResultsController.object(at: indexPath)
-        let cellImage = UIImage(data: comparisonImage.image ?? Data())
-        cell.CloudImageView.image = cellImage
-        
-        return cell
-    }
-    
     // MARK: - Fetched Results Controller Delegate Methods
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        
-        //photoCollectionView.
-    }
-    
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
         switch type {
-            
         case .insert:
             guard let indexPath = newIndexPath else { return }
             photoCollectionView.insertItems(at: [indexPath])//.insertRows(at: [indexPath], with: .automatic)
@@ -124,11 +105,6 @@ class IdentifyViewController: UIViewController, UIImagePickerControllerDelegate,
         }
     }
     
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        
-        //photoCollectionView.endUpdates()
-    }
-    
     /*
     // MARK: - Navigation
 
@@ -139,4 +115,54 @@ class IdentifyViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     */
 
+    func presentImagePickerController() {
+        
+        let alert = UIAlertController(title: "Select Source", message: nil, preferredStyle: .actionSheet)
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { (_) in
+                
+                imagePicker.sourceType = .photoLibrary
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+            alert.addAction(photoLibraryAction)
+        }
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraAction = UIAlertAction(title: "Camera", style: .default) { (_) in
+                
+                imagePicker.sourceType = .camera
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+            alert.addAction(cameraAction)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    
+        guard let image = info[.originalImage] as? UIImage else { return }
+        
+        testImageView.image = image
+        cell?.CloudImageView.image = image
+        CoreDataStack.saveContext()
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func grayscaleImage(_ image: UIImage) -> UIImage? {
+        
+        if let imageFilter = CIFilter(name: "CIColorControls") {
+            let startImage = CIImage(image: image)
+            imageFilter.setValue(startImage, forKey: kCIInputImageKey)
+            imageFilter.setValue(0.0, forKey: "inputSaturation")
+            
+            guard let outputImage = imageFilter.outputImage,
+            let cgImage = context.createCGImage(outputImage, from: outputImage.extent) else { return nil }
+            return UIImage(cgImage: cgImage)
+        }
+        return nil
+    }
 }
