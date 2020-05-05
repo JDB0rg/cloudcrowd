@@ -54,8 +54,8 @@
 
 {
 "category" : "Low-level clouds",
-"subcategory" : "Cumulus CloudData 2",
-"name" : "Straus",
+"subcategory" : "Cumulus CloudData 3",
+"name" : "Stratus",
 "prefix" : " Latin prefix strato-, meaning layer",
 
 "composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
@@ -80,7 +80,7 @@
 
 {
 "category" : "Low-level clouds",
-"subcategory" : "Cumulus CloudData 2",
+"subcategory" : "Cumulus CloudData 4",
 "name" : "Straus",
 "prefix" : " Latin prefix strato-, meaning layer",
 
