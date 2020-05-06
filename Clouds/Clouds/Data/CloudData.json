@@ -69,7 +69,7 @@
 "atmosphere" : "",
 
 "notes" : "",
-"facts" : [""],
+"facts" : ["Can accompany Crepuscular rays which happen most frequently with Stratus clouds."],
 
 "elevation" : 6500,
 "height" : 0,
@@ -81,7 +81,7 @@
 {
 "category" : "Low-level clouds",
 "subcategory" : "Cumulus CloudData 4",
-"name" : "Straus",
+"name" : "Stratocumulus",
 "prefix" : " Latin prefix strato-, meaning layer",
 
 "composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
