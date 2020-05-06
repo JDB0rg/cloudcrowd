@@ -16,7 +16,7 @@ class CloudDataController {
     
     var clouds: [CloudObject] = []
     
-    var cloudDataArray: [String] = ["Cumulus", "Cumulonimbus"]
+    var cloudDataArray: [String] = []
     
     func saveToPersistentStore() {
         do {
@@ -26,13 +26,16 @@ class CloudDataController {
         }
     }
     
-    func decodeClouds() {   
-        readCloudJson("CloudData")
-        //saveToPersistentStore()
-        
+    func addCloud(cloud: CloudObject) {
+        clouds.append(cloud)
+        saveToPersistentStore()
     }
     
-    func createCloud(category: String, subcategory: String, name: String, prefix: String, composition: String, formation: String, appearance: String, atmosphere: String, notes: String, facts: String, elevation: Int16, height: Int16) {
+    func decodeClouds() {   
+        readCloudJson("CloudData")
+    }
+    
+    private func createCloud(category: String, subcategory: String, name: String, prefix: String, composition: String, formation: String, appearance: String, atmosphere: String, notes: String, facts: String, elevation: Int16, height: Int16) {
         
         let _ = Cloud(category: category, subcategory: subcategory, name: name, prefix: prefix, composition: composition, formation: formation, appearance: appearance, atmosphere: atmosphere, notes: notes, facts: facts, elevation: elevation, height: height)
     }
