@@ -124,10 +124,6 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     // MARK: - Private Methods
-    private func decodeCloud(_ file: String) {
-        cloudController.readCloudJson(file)
-    }
-    
     private func setupCellTheme(_ cell: CloudHomeTableViewCell) {
         cell.contentView.clipsToBounds = true
         cell.cloudImageView.layer.cornerRadius = 20

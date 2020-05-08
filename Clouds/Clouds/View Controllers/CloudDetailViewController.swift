@@ -21,6 +21,7 @@ class CloudDetailViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var subcategoryLabel: UILabel!
+    @IBOutlet weak var prefixLabel: UILabel!
     
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var mainImageView: UIImageView!
@@ -31,19 +32,23 @@ class CloudDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        updateViews()
     }
     
     private func updateViews() {
         guard isViewLoaded else { return }
         guard let cloud = cloud else { return }
         
-        nameLabel.text = "Real Cool Cloud Guy" //cloud.name
+        nameLabel.text = cloud.name
         subcategoryLabel.text = cloud.subcategory
+        prefixLabel.text = cloud.prefix
         
         heightLabel.text = String(describing: cloud.height)
-        elevationLabel.text = "Real tall like a few thousand feet or so" //String(describing: cloud.elevation)
-        compositionLabel.text = String(describing: cloud.composition)
+        elevationLabel.text = String(describing: cloud.elevation)
+        let compositionArr = cloud.composition?.map { String($0) }
+        let compositionString = compositionArr?.joined(separator: "")
+        compositionLabel.text = cloud.composition//compositionString
         
 //        let mainImage = UIImage(named: "lukasz-lada-unsplash-cloud")
 //        mainImageView.image = mainImage

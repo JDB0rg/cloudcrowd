@@ -16,7 +16,7 @@ class CloudDataController {
     
     var clouds: [CloudObject] = []
     
-    var cloudDataArray: [String] = ["Cumulus", "Cumulonimbus"]
+    var cloudDataArray: [String] = []
     
     func saveToPersistentStore() {
         do {
@@ -26,18 +26,21 @@ class CloudDataController {
         }
     }
     
-    func decodeClouds() {   
-        readCloudJson("CloudData")
-        //saveToPersistentStore()
-        
+    func addCloud(cloud: CloudObject) {
+        clouds.append(cloud)
+        saveToPersistentStore()
     }
     
-    func createCloud(category: String, subcategory: String, name: String, prefix: String, composition: String, formation: String, appearance: String, atmosphere: String, notes: String, facts: String, elevation: Int16, height: Int16) {
+    func decodeClouds() {   
+        readCloudJson("CloudData")
+    }
+    
+    private func createCloud(category: String, subcategory: String, name: String, prefix: String, composition: String, formation: String, appearance: String, atmosphere: String, notes: String, facts: String, elevation: Int16, height: Int16) {
         
         let _ = Cloud(category: category, subcategory: subcategory, name: name, prefix: prefix, composition: composition, formation: formation, appearance: appearance, atmosphere: atmosphere, notes: notes, facts: facts, elevation: elevation, height: height)
     }
     
-    func readCloudJson(_ fileName: String) {
+    private func readCloudJson(_ fileName: String) {
 
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
             NSLog("URL not useable")
@@ -60,9 +63,6 @@ class CloudDataController {
                         let elevation = cloud.elevation,
                         let height = cloud.height
                     else { return }
-                    
-                    //let composition = clouds[0].composition,
-                    // let facts = clouds[0].facts,
                     
                     self.createCloud(category: cloud.category, subcategory: subcategory, name: name, prefix: prefix, composition: "\(cloud.composition)", formation: formation, appearance: appearance, atmosphere: atmosphere, notes: notes, facts: "\(String(describing: cloud.facts))", elevation: Int16(elevation), height: Int16(height))
                 }
