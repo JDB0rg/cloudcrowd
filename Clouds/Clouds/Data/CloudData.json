@@ -56,7 +56,7 @@
 "category" : "Low-level clouds",
 "subcategory" : "Cumulus CloudData 3",
 "name" : "Stratus",
-"prefix" : " Latin prefix strato-, meaning layer",
+"prefix" : "Latin prefix strato-, meaning layer",
 
 "composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
 "formation" : "Warm moist air rises and depressurizes and settles lower to the ground according to ideal temperatures",
@@ -82,7 +82,7 @@
 "category" : "Low-level clouds",
 "subcategory" : "Cumulus CloudData 4",
 "name" : "Stratocumulus",
-"prefix" : " Latin prefix strato-, meaning layer",
+"prefix" : "Latin prefix strato-, meaning layer",
 
 "composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
 "formation" : "Warm moist air rises and depressurizes and settles lower to the ground according to ideal temperatures",

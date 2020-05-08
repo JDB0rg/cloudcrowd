@@ -40,7 +40,7 @@ class CloudDataController {
         let _ = Cloud(category: category, subcategory: subcategory, name: name, prefix: prefix, composition: composition, formation: formation, appearance: appearance, atmosphere: atmosphere, notes: notes, facts: facts, elevation: elevation, height: height)
     }
     
-    func readCloudJson(_ fileName: String) {
+    private func readCloudJson(_ fileName: String) {
 
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
             NSLog("URL not useable")
@@ -63,9 +63,6 @@ class CloudDataController {
                         let elevation = cloud.elevation,
                         let height = cloud.height
                     else { return }
-                    
-                    //let composition = clouds[0].composition,
-                    // let facts = clouds[0].facts,
                     
                     self.createCloud(category: cloud.category, subcategory: subcategory, name: name, prefix: prefix, composition: "\(cloud.composition)", formation: formation, appearance: appearance, atmosphere: atmosphere, notes: notes, facts: "\(String(describing: cloud.facts))", elevation: Int16(elevation), height: Int16(height))
                 }
