@@ -9,14 +9,13 @@
 import UIKit
 import CoreData
 
-class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CloudImageDelegate {
+class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: - Properties
     let context = CIContext(options: nil)
     var comparisonImage: UIImage?
-    var comparisonCell: IdentifyCollectionViewCell?
     var photo: Photo?
-    var cell: IdentifyCollectionViewCell?
+    var cloud: Cloud?
     
     // MARK: - Controllers
     let cloudImageController = CloudImageController()
@@ -29,9 +28,11 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         photoCollectionView.delegate = self
         photoCollectionView.dataSource = self
+        
+        photoCollectionView.reloadData()
     }
     
     func setCloudImage(on cell: IdentifyCollectionViewCell) {
@@ -48,28 +49,27 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
     @IBAction func compareTapped(_ sender: Any) {
         
     }
-        
+    
     // MARK: Collection View Controller Delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      fetchedResultsController.fetchedObjects?.count ?? 0
+        let items = fetchedIdentityResultsController.fetchedObjects?.count ?? 0
+        return items
     }
-
-    let reuseIdentifier = "ComparisonImageCell"
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      guard var cell = cell else {
-          fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)")
-      }
-      cell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! IdentifyCollectionViewCell
-      
-      let comparisonImage = fetchedResultsController.object(at: indexPath)
-      let cellImage = UIImage(data: comparisonImage.image ?? Data())
-      cell.CloudImageView.image = cellImage
-      
-      return cell
+        guard let cell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: IdentifyCollectionViewCell.reuseIdentifier, for: indexPath) as? IdentifyCollectionViewCell else { fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)") }
+        
+        let cloudCells = fetchedIdentityResultsController.object(at: indexPath)
+        
+        let cellImage = UIImage(data: cloudCells.image ?? Data())
+        cell.CloudImageView.image = cellImage
+        cell.testLabel.text = "nice test!"
+        
+        return cell
     }
     
     // MARK: - Fetched Results Controller
-    lazy var fetchedResultsController: NSFetchedResultsController<Photo> = {
+    lazy var fetchedIdentityResultsController: NSFetchedResultsController<Photo> = {
         let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
         fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "image", ascending: true) ]
         
@@ -106,15 +106,15 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     func presentImagePickerController() {
         
         let alert = UIAlertController(title: "Select Source", message: nil, preferredStyle: .actionSheet)
@@ -143,12 +143,19 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    
-        guard let image = info[.originalImage] as? UIImage else { return }
         
-        testImageView.image = image
-        cell?.CloudImageView.image = image
+        comparisonImage = info[.originalImage] as? UIImage
+        //: FIXIT - setting test image here
+        testImageView.image = comparisonImage
+        
+        let imageData = comparisonImage?.pngData()
+        photo?.image = imageData
         CoreDataStack.saveContext()
+        
+        // 1. Convert to binary data which can be saves to CoreData
+        // 2. Fetch from CD and put into the Collection view.
+        //let photo = Photo(entity: NSEntityDescription, insertInto: NSManagedObjectContext?)
+        
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -160,7 +167,7 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
             imageFilter.setValue(0.0, forKey: "inputSaturation")
             
             guard let outputImage = imageFilter.outputImage,
-            let cgImage = context.createCGImage(outputImage, from: outputImage.extent) else { return nil }
+                let cgImage = context.createCGImage(outputImage, from: outputImage.extent) else { return nil }
             return UIImage(cgImage: cgImage)
         }
         return nil

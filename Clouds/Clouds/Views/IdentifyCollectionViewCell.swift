@@ -11,7 +11,9 @@ import UIKit
 class IdentifyCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var CloudImageView: UIImageView!
+    @IBOutlet weak var testLabel: UILabel!
     
+    static let reuseIdentifier = "ComparisonImageCell"
     var photo: Photo? {
         didSet{
             updateViews()
@@ -27,7 +29,8 @@ class IdentifyCollectionViewCell: UICollectionViewCell {
     private func updateViews() {
         guard let photo = photo else { return }
         let cellImage = UIImage(data: photo.image ?? Data())
-        self.CloudImageView.image = cellImage
+        CloudImageView.image = cellImage
+        testLabel.text = "Test words"
     }
 
 }
