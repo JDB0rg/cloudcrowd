@@ -23,7 +23,7 @@ class CloudPhotoViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     // MARK: - Fetched Results Controller
-    lazy var fetchedResultsController: NSFetchedResultsController<Photo> = {
+    lazy var fetchedPhotoResultsController: NSFetchedResultsController<Photo> = {
         let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
         fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "image", ascending: false) ]
         
@@ -38,7 +38,7 @@ class CloudPhotoViewController: UIViewController, UICollectionViewDelegate, UICo
     }()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fetchedResultsController.fetchedObjects?.count ?? 0
+        return fetchedPhotoResultsController.fetchedObjects?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

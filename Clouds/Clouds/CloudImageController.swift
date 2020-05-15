@@ -12,14 +12,12 @@ class CloudImageController {
     
     var localCloudImages: [Photo] = []
     var remoteCloudImages: [UIImage] = []
+    var photo: Photo?
     
     func createPhoto() {
         let moc = CoreDataStack.context
         CoreDataStack.saveContext()
-//        var temp = photo
-//        guard let imageIndex = localCloudImages.firstIndex(of: photo) else { return }
-//        temp = UIImage(data: localCloudImages[imageIndex].image ?? Data() )
-        
+       
     }
     
     func addPhoto(image: Photo) {

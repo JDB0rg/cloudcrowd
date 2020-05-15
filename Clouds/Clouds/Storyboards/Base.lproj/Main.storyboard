@@ -311,35 +311,34 @@
                                 <rect key="frame" x="20" y="88" width="374" height="358.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOo-lA-5zA">
-                                        <rect key="frame" x="12" y="310" width="350" height="36.5"/>
-                                        <state key="normal" title="Button"/>
+                                        <rect key="frame" x="12" y="313.5" width="350" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Button Guy"/>
                                         <connections>
                                             <action selector="compareTapped:" destination="uL8-dH-oii" eventType="touchUpInside" id="lxJ-ky-vmV"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mha-Xs-aKC">
-                                        <rect key="frame" x="20" y="21" width="334" height="273"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tYE-6a-kcD">
-                                        <rect key="frame" x="20" y="21" width="334" height="273"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tYE-6a-kcD">
+                                        <rect key="frame" x="20" y="20" width="334" height="273.5"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="GOo-lA-5zA" firstAttribute="leading" secondItem="Oa8-fQ-Vb2" secondAttribute="leading" constant="12" id="5Bm-v4-mp3"/>
-                                    <constraint firstItem="GOo-lA-5zA" firstAttribute="top" secondItem="mha-Xs-aKC" secondAttribute="bottom" constant="16" id="Dr7-Dh-EvM"/>
-                                    <constraint firstItem="GOo-lA-5zA" firstAttribute="top" secondItem="Oa8-fQ-Vb2" secondAttribute="top" constant="310" id="EPy-fJ-6Xu"/>
-                                    <constraint firstAttribute="trailing" secondItem="mha-Xs-aKC" secondAttribute="trailing" constant="20" symbolic="YES" id="Qs3-yQ-3rD"/>
+                                    <constraint firstItem="GOo-lA-5zA" firstAttribute="top" secondItem="tYE-6a-kcD" secondAttribute="bottom" constant="20" id="EPy-fJ-6Xu"/>
+                                    <constraint firstAttribute="trailing" secondItem="tYE-6a-kcD" secondAttribute="trailing" constant="20" id="OJH-YQ-wgD"/>
                                     <constraint firstAttribute="bottom" secondItem="GOo-lA-5zA" secondAttribute="bottom" constant="12" id="VL5-ht-DRj"/>
+                                    <constraint firstItem="tYE-6a-kcD" firstAttribute="top" secondItem="Oa8-fQ-Vb2" secondAttribute="top" constant="20" id="Z8r-oz-4AV"/>
                                     <constraint firstAttribute="trailing" secondItem="GOo-lA-5zA" secondAttribute="trailing" constant="12" id="aA2-cF-9ga"/>
-                                    <constraint firstItem="mha-Xs-aKC" firstAttribute="leading" secondItem="Oa8-fQ-Vb2" secondAttribute="leading" constant="20" symbolic="YES" id="kb3-aN-bwm"/>
-                                    <constraint firstItem="mha-Xs-aKC" firstAttribute="top" secondItem="Oa8-fQ-Vb2" secondAttribute="top" constant="21" id="xq1-jr-PaF"/>
+                                    <constraint firstItem="tYE-6a-kcD" firstAttribute="leading" secondItem="Oa8-fQ-Vb2" secondAttribute="leading" constant="20" id="eLo-5f-OLP"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kTk-yd-uo1">
-                                <rect key="frame" x="20" y="466.5" width="374" height="326.5"/>
+                                <rect key="frame" x="20" y="466.5" width="374" height="326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kTk-yd-uo1" secondAttribute="height" multiplier="187:163" id="gPt-e7-nkb"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a75-DL-3JU">
                                     <size key="itemSize" width="110" height="110"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -355,18 +354,29 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lukasz-lada-unsplash-cloud" translatesAutoresizingMaskIntoConstraints="NO" id="dUm-Eo-bCZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="90"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWf-JS-gLx">
+                                                    <rect key="frame" x="0.0" y="75" width="110" height="35"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="dUm-Eo-bCZ" secondAttribute="bottom" id="Ce4-te-tbw"/>
+                                            <constraint firstAttribute="bottom" secondItem="dUm-Eo-bCZ" secondAttribute="bottom" constant="20" id="Ce4-te-tbw"/>
+                                            <constraint firstItem="GWf-JS-gLx" firstAttribute="top" secondItem="j95-PJ-nOs" secondAttribute="top" constant="75" id="EJM-43-lYZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="GWf-JS-gLx" secondAttribute="trailing" id="Gx6-Qo-uov"/>
+                                            <constraint firstAttribute="bottom" secondItem="GWf-JS-gLx" secondAttribute="bottom" id="Ic8-jj-56C"/>
                                             <constraint firstItem="dUm-Eo-bCZ" firstAttribute="leading" secondItem="j95-PJ-nOs" secondAttribute="leading" id="JK8-Z1-P6i"/>
+                                            <constraint firstItem="GWf-JS-gLx" firstAttribute="leading" secondItem="j95-PJ-nOs" secondAttribute="leading" id="e44-yH-zDe"/>
                                             <constraint firstItem="dUm-Eo-bCZ" firstAttribute="top" secondItem="j95-PJ-nOs" secondAttribute="top" id="f9c-SB-pwa"/>
                                             <constraint firstAttribute="trailing" secondItem="dUm-Eo-bCZ" secondAttribute="trailing" id="pWt-mX-j3P"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="CloudImageView" destination="dUm-Eo-bCZ" id="6jk-gL-HGd"/>
+                                            <outlet property="testLabel" destination="GWf-JS-gLx" id="ANg-Pe-NoC"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -380,7 +390,6 @@
                             <constraint firstItem="OGY-jS-jl1" firstAttribute="trailing" secondItem="kTk-yd-uo1" secondAttribute="trailing" constant="20" id="S2U-Ll-7Ea"/>
                             <constraint firstItem="kTk-yd-uo1" firstAttribute="leading" secondItem="OGY-jS-jl1" secondAttribute="leading" constant="20" id="X6I-2h-Xou"/>
                             <constraint firstItem="Oa8-fQ-Vb2" firstAttribute="top" secondItem="OGY-jS-jl1" secondAttribute="top" id="Zxx-B4-hKW"/>
-                            <constraint firstItem="OGY-jS-jl1" firstAttribute="bottom" secondItem="kTk-yd-uo1" secondAttribute="bottom" constant="20" id="bua-Fc-ci7"/>
                             <constraint firstItem="Oa8-fQ-Vb2" firstAttribute="height" secondItem="OLh-Fo-yZY" secondAttribute="height" multiplier="1:2.5" id="muO-F0-5ay"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OGY-jS-jl1"/>
