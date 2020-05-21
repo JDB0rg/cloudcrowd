@@ -21,10 +21,10 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
     let cloudImageController = CloudImageController()
     
     // MARK: - Outlets
+    @IBOutlet weak var compareCollectionView: UICollectionView!
     @IBOutlet weak var comparisonView: UIView!
     @IBOutlet weak var compareButton: UIButton!
     @IBOutlet weak var photoCollectionView: UICollectionView!
-    @IBOutlet weak var testImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -146,7 +146,7 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
         
         comparisonImage = info[.originalImage] as? UIImage
         //: FIXIT - setting test image here
-        testImageView.image = comparisonImage
+        //testImageView.image = comparisonImage //// Set new image like this
         
         let imageData = comparisonImage?.pngData()
         photo?.image = imageData
