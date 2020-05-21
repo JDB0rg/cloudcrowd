@@ -35,6 +35,7 @@
 		11B26597237E62DE00006F61 /* CloudData.json in Resources */ = {isa = PBXBuildFile; fileRef = 11B26596237E62DE00006F61 /* CloudData.json */; };
 		8C28CADE2437E4E600633679 /* CloudImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28CADD2437E4E600633679 /* CloudImageDelegate.swift */; };
 		8C6F39192423202500A6F302 /* Identify+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F39182423202500A6F302 /* Identify+Image.swift */; };
+		8C74C2BB2475F85400A87789 /* CompareCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74C2BA2475F85400A87789 /* CompareCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		11B26596237E62DE00006F61 /* CloudData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CloudData.json; sourceTree = "<group>"; };
 		8C28CADD2437E4E600633679 /* CloudImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudImageDelegate.swift; sourceTree = "<group>"; };
 		8C6F39182423202500A6F302 /* Identify+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Identify+Image.swift"; sourceTree = "<group>"; };
+		8C74C2BA2475F85400A87789 /* CompareCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				111B0FBB231F6297001710F1 /* CloudHomeTableViewCell.swift */,
 				11AFA66523FF7A5500159423 /* CloudPhotoCollectionViewCell.swift */,
 				1193748C240F2CFC0060A3C6 /* IdentifyCollectionViewCell.swift */,
+				8C74C2BA2475F85400A87789 /* CompareCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				112D3FD3229DA597000F7DA6 /* User.swift in Sources */,
 				112D3FD6229DE02A000F7DA6 /* Fonts.swift in Sources */,
 				112280C4235FB96F001ED0AD /* WeatherObject.swift in Sources */,
+				8C74C2BB2475F85400A87789 /* CompareCollectionViewCell.swift in Sources */,
 				1193748D240F2CFC0060A3C6 /* IdentifyCollectionViewCell.swift in Sources */,
 				8C6F39192423202500A6F302 /* Identify+Image.swift in Sources */,
 				1193748B240F10B40060A3C6 /* Cloud+Convenience.swift in Sources */,
