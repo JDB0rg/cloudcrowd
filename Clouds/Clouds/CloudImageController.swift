@@ -10,14 +10,16 @@ import UIKit
 
 class CloudImageController {
     
-    var localCloudImages: [Photo] = []
+    var localCloudImages: [String] = ["cumulus", "cumulonimbus"]
     var remoteCloudImages: [UIImage] = []
     var photo: Photo?
+    var cloudImage: UIImage?
     
     func createPhoto() {
-        let moc = CoreDataStack.context
-        CoreDataStack.saveContext()
-       
+        for clouds in localCloudImages {
+            cloudImage = UIImage(named: clouds)
+            remoteCloudImages.append(cloudImage ?? UIImage() )
+        }
     }
     
     func addPhoto(image: Photo) {

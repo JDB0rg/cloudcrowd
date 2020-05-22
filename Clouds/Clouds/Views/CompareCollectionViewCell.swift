@@ -9,7 +9,7 @@
 import UIKit
 
 class CompareCollectionViewCell: UICollectionViewCell {
-    static let reuseIdentifier = "CompareCell"
+    static let reuseIdentifier = "PhotoCell"
     
     @IBOutlet weak var compareImageView: UIImageView!
 }
