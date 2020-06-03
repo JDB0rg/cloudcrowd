@@ -82,7 +82,7 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
            guard let cell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: CompareCollectionViewCell.reuseIdentifier, for: indexPath) as? CompareCollectionViewCell else { fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)") }
         let cloudPhoto = cloudImageController.remoteCloudImages[indexPath.row]
 
-        cell.compareImageView.image = cloudPhoto
+        cell.testLabel.text = "This is a test"
         return cell
     }
     

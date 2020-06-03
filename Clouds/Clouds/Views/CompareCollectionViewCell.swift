@@ -11,5 +11,6 @@ import UIKit
 class CompareCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "PhotoCell"
     
-    @IBOutlet weak var compareImageView: UIImageView!
+    //@IBOutlet weak var compareImageView: UIImageView!
+    @IBOutlet weak var testLabel: UILabel!
 }
