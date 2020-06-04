@@ -9,7 +9,8 @@
 import UIKit
 import CoreData
 
-class CloudPhotoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate{
+class CloudPhotoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    //NSFetchedResultsControllerDelegate
 
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
@@ -23,22 +24,23 @@ class CloudPhotoViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     // MARK: - Fetched Results Controller
-    lazy var fetchedPhotoResultsController: NSFetchedResultsController<Photo> = {
-        let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
-        fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "image", ascending: false) ]
-        
-        let moc = CoreDataStack.context
-        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                             managedObjectContext: moc,
-                                             sectionNameKeyPath: nil,
-                                             cacheName: nil)
-        frc.delegate = self
-        try? frc.performFetch()
-        return frc
-    }()
+//    lazy var fetchedPhotoResultsController: NSFetchedResultsController<Photo> = {
+//        let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
+//        fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "image", ascending: false) ]
+//
+//        let moc = CoreDataStack.context
+//        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+//                                             managedObjectContext: moc,
+//                                             sectionNameKeyPath: nil,
+//                                             cacheName: nil)
+//        frc.delegate = self
+//        try? frc.performFetch()
+//        return frc
+//    }()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fetchedPhotoResultsController.fetchedObjects?.count ?? 0
+        // return fetchedPhotoResultsController.fetchedObjects?.count ?? 0
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -46,6 +48,8 @@ class CloudPhotoViewController: UIViewController, UICollectionViewDelegate, UICo
             NSLog("Error dequeueing cell")
             return UICollectionViewCell()
         }
+        cell.testLabel.text = "Test this thing"
+        cell.testImageView.image = UIImage(named: "cumulonimbus")
         
         return cell
     }

@@ -28,6 +28,9 @@ class IdentifyCollectionViewCell: UICollectionViewCell {
     
     private func updateViews() {
         guard let photo = photo else { return }
+        
+        CloudImageView.isHidden = true
+        
         let cellImage = UIImage(data: photo.image ?? Data())
         CloudImageView.image = cellImage
         testLabel.text = "Test words"

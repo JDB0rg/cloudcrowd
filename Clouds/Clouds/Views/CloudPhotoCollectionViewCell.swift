@@ -10,4 +10,6 @@ import UIKit
 
 class CloudPhotoCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var testImageView: UIImageView!
 }
