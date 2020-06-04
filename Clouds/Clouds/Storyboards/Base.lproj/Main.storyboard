@@ -313,9 +313,6 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CVI-76-m9q">
                                         <rect key="frame" x="20" y="8" width="334" height="300.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="300.5" id="b0F-zi-RaU"/>
-                                        </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G72-7J-xvX">
                                             <size key="itemSize" width="334" height="345"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -331,21 +328,28 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Adm-gk-1RB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="330" height="340"/>
+                                                            <rect key="frame" x="0.0" y="292" width="330" height="48"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PyE-bO-S3b">
+                                                            <rect key="frame" x="0.0" y="0.0" width="330" height="292"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="Adm-gk-1RB" secondAttribute="bottom" id="27I-lx-BbF"/>
-                                                        <constraint firstItem="Adm-gk-1RB" firstAttribute="top" secondItem="vtj-Og-5Td" secondAttribute="top" id="Pc8-50-UgS"/>
+                                                        <constraint firstItem="PyE-bO-S3b" firstAttribute="leading" secondItem="vtj-Og-5Td" secondAttribute="leading" id="R3h-5W-t8C"/>
                                                         <constraint firstItem="Adm-gk-1RB" firstAttribute="leading" secondItem="vtj-Og-5Td" secondAttribute="leading" id="SCX-cr-dMZ"/>
                                                         <constraint firstAttribute="trailing" secondItem="Adm-gk-1RB" secondAttribute="trailing" id="ZwA-qC-a0g"/>
+                                                        <constraint firstItem="PyE-bO-S3b" firstAttribute="top" secondItem="vtj-Og-5Td" secondAttribute="top" id="gDG-nv-zYh"/>
+                                                        <constraint firstAttribute="trailing" secondItem="PyE-bO-S3b" secondAttribute="trailing" id="nTF-QU-Lii"/>
+                                                        <constraint firstItem="Adm-gk-1RB" firstAttribute="top" secondItem="PyE-bO-S3b" secondAttribute="bottom" id="xwv-D3-oSZ"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="330" height="340"/>
                                                 <connections>
+                                                    <outlet property="compareImageView" destination="PyE-bO-S3b" id="0F1-V0-acB"/>
                                                     <outlet property="testLabel" destination="Adm-gk-1RB" id="wed-wV-u73"/>
                                                 </connections>
                                             </collectionViewCell>

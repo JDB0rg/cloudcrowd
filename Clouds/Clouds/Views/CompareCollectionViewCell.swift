@@ -13,4 +13,5 @@ class CompareCollectionViewCell: UICollectionViewCell {
     
     //@IBOutlet weak var compareImageView: UIImageView!
     @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var compareImageView: UIImageView!
 }
