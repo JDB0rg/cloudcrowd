@@ -29,6 +29,7 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         cloudImageController.createPhoto()
+        print("Remote cloud images: \(cloudImageController.remoteCloudImages)")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,32 +60,33 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
     
     // MARK:  Collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let compareCloudCount = cloudImageController.localCloudImages.count
         if collectionView == compareCollectionView {
-            return cloudImageController.localCloudImages.count
+            return compareCloudCount
         }
         
-        return fetchedIdentityResultsController.fetchedObjects?.count ?? 0
+        return compareCloudCount //fetchedIdentityResultsController.fetchedObjects?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: IdentifyCollectionViewCell.reuseIdentifier, for: indexPath) as? IdentifyCollectionViewCell else { fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)") }
-        
-        let cloudCells = fetchedIdentityResultsController.object(at: indexPath)
-        
-        let cellImage = UIImage(data: cloudCells.image ?? Data())
-        cell.CloudImageView.image = cellImage
-        cell.testLabel.text = "nice test!"
-        
-        if collectionView == compareCollectionView {
+//        guard let cell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: IdentifyCollectionViewCell.reuseIdentifier, for: indexPath) as? IdentifyCollectionViewCell else { fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)") }
+//        
+//        let cloudCells = fetchedIdentityResultsController.object(at: indexPath)
+//        
+//        let cellImage = UIImage(data: cloudCells.image ?? Data())
+//        cell.CloudImageView.image = cellImage
+//        cell.testLabel.text = "nice test!"
+//        
+//        if collectionView == compareCollectionView {
             guard let cell = compareCollectionView.dequeueReusableCell(withReuseIdentifier: CompareCollectionViewCell.reuseIdentifier, for: indexPath) as? CompareCollectionViewCell else { fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)") }
             //let cloudPhoto = cloudImageController.localCloudImages[indexPath.row]
             
-            cell.compareImageView.image = UIImage(named: "cumulonimbus")//cloudImageController.populateImages()
+            cell.compareImageView.image = cloudImageController.createPhoto()//.populateImages() 
             cell.testLabel.text = "This is a test"
             
             return cell
-        }
+        //}
         
         return cell
     }

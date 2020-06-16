@@ -11,26 +11,32 @@ import CoreData
 
 class CloudImageController {
     
-    var localCloudImages: [String] = ["cumulus", "cumulonimbus"]
+    var localCloudImages: [String] = [
+        "altocumulus-lenticularis","cumulus","cumulonimbus","cumulonimbus","altocumulus2","stratocumulus_stratiformis_perlucidus_translucidus","cirrus","cirrus2","altostratus","cirrostratus","cirrocumulus","altocumulus","nimbostratus"
+    ]
     var remoteCloudImages: [UIImage] = []
     var photo: Photo?
     var cloudImage: UIImage?
     var tempImage: UIImage?
     
-    func createPhoto() {
+    func createPhoto() -> UIImage {
+        var returnImage: UIImage?
+        let moc = CoreDataStack.context
+        let pic = Photo(context: moc)
+        
         for cloud in localCloudImages {
             cloudImage = UIImage(named: cloud)
             remoteCloudImages.append(cloudImage ?? UIImage() )
-            
+            cloudImage = returnImage
             if let imgData = photo?.image {
                 cloudImage = UIImage(data: imgData)
             }
         }
+        return cloudImage ?? UIImage()
     }
     
     func addPhoto(image: Photo) {
-        let moc = CoreDataStack.context
-        let pic = Photo(context: moc)
+        
         
         
     }
