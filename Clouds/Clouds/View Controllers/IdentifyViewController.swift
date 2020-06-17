@@ -28,7 +28,6 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        cloudImageController.createPhoto()
         print("Remote cloud images: \(cloudImageController.remoteCloudImages)")
     }
     override func viewDidLoad() {
@@ -42,11 +41,7 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
         compareCollectionView.dataSource = self
         compareCollectionView.reloadData()
         
-        cloudImageController.createPhoto()
-    }
-    
-    func setCloudImage(on cell: IdentifyCollectionViewCell) {
-        cloudImageController.createPhoto()
+        
     }
     
     // MARK: - Actions
@@ -80,15 +75,19 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
 //        
 //        if collectionView == compareCollectionView {
             guard let cell = compareCollectionView.dequeueReusableCell(withReuseIdentifier: CompareCollectionViewCell.reuseIdentifier, for: indexPath) as? CompareCollectionViewCell else { fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)") }
-            //let cloudPhoto = cloudImageController.localCloudImages[indexPath.row]
+            let cloudPhoto = cloudImageController.localCloudImages[indexPath.row]
             
-            cell.compareImageView.image = cloudImageController.createPhoto()//.populateImages() 
-            cell.testLabel.text = "This is a test"
+            cell.compareImageView.image = UIImage(named: cloudPhoto)
+            let cloudLabel = cloudPhoto.capitalized
+                .replacingOccurrences(of: "2", with: "")
+                .replacingOccurrences(of: "_", with: " ")
+                .replacingOccurrences(of: "-", with: " ")
+            cell.testLabel.text = "\(cloudLabel)"
             
             return cell
         //}
         
-        return cell
+        //return cell
     }
     
     // MARK: - Fetched Results Controller
