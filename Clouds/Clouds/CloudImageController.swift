@@ -34,5 +34,10 @@ class CloudImageController {
         }
         return cloudImage ?? UIImage()
     }
+    
+//    func getCategoryImage(from category: String) {
+//        let imageString = category.split(separator: " ")
+//        iconImage = UIImage(named: "C-\(imageString[0])")
+//    }
 }
 

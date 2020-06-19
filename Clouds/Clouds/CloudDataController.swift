@@ -66,7 +66,6 @@ class CloudDataController {
                     
                     self.createCloud(category: cloud.category, subcategory: subcategory, name: name, prefix: prefix, composition: "\(cloud.composition)", formation: formation, appearance: appearance, atmosphere: atmosphere, notes: notes, facts: "\(String(describing: cloud.facts))", elevation: Int16(elevation), height: Int16(height))
                 }
-                //saveToPersistentStore()
             } catch {
                 NSLog("Error reading Cloud data from JSON file \(#line)")
             }
