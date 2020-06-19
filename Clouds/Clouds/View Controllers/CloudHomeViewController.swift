@@ -17,12 +17,14 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     @IBOutlet weak var cloudLogoView: UIView!
+    @IBOutlet weak var cloudLogoLabel: UILabel!
     @IBOutlet weak var cloudTableView: UITableView!
     
     var cloud: Cloud?
     var photo: Photo?
     
     var cloudController = CloudDataController()
+    var cloudImageController = CloudImageController()
     var weatherController = WeatherController()
     
     override func viewDidLoad() {
@@ -32,6 +34,7 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
         cloudTableView.delegate = self
         cloudTableView.dataSource = self
         
+        cloudLogoLabel.text = "CloudCrowd"
         //weatherController.fetchWeather(lon: 139, lat: 35)
     }
     
@@ -67,8 +70,13 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
         cell.subtitleLabel.text = cloud.subcategory
         cell.infoLabel.text = cloud.formation
         
-        let cloudImage = UIImage(data: photo?.image ?? Data())
-        cell.cloudImageView?.image = cloudImage
+        guard let name = cloud.name else { return UITableViewCell() }
+        //if cloudImageController.localCloudImages.contains(name) {
+        cell.cloudImageView?.image = UIImage(named: name.lowercased())
+        //}
+        
+//        let cloudImage = UIImage(data: photo?.image ?? Data())
+//        cell.cloudImageView?.image = cloudImage
         
         setupCellTheme(cell)
         

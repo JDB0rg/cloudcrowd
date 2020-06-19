@@ -182,9 +182,23 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jlv-gr-E4E">
                                 <rect key="frame" x="20" y="88" width="374" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quN-Tt-LzM">
+                                        <rect key="frame" x="50" y="18" width="274" height="34"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="quN-Tt-LzM" firstAttribute="centerY" secondItem="jlv-gr-E4E" secondAttribute="centerY" id="0j2-Z8-xko"/>
+                                    <constraint firstItem="quN-Tt-LzM" firstAttribute="leading" secondItem="jlv-gr-E4E" secondAttribute="leading" constant="50" id="1CT-7d-S5Q"/>
                                     <constraint firstAttribute="height" constant="70" id="7Jd-tZ-Nnm"/>
+                                    <constraint firstAttribute="trailing" secondItem="quN-Tt-LzM" secondAttribute="trailing" constant="50" id="PWU-N2-gi3"/>
+                                    <constraint firstItem="quN-Tt-LzM" firstAttribute="top" secondItem="jlv-gr-E4E" secondAttribute="top" constant="18" id="bJq-Du-70l"/>
+                                    <constraint firstAttribute="bottom" secondItem="quN-Tt-LzM" secondAttribute="bottom" constant="18" id="yVb-nN-cBm"/>
+                                    <constraint firstItem="quN-Tt-LzM" firstAttribute="centerX" secondItem="jlv-gr-E4E" secondAttribute="centerX" id="zvF-iz-1Te"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j5p-9V-NFF">
@@ -224,7 +238,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lukasz-lada-unsplash-cloud" translatesAutoresizingMaskIntoConstraints="NO" id="PMj-d2-n8f">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PMj-d2-n8f">
                                                                     <rect key="frame" x="0.0" y="130" width="355" height="250"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="250" id="60i-Hs-IVQ"/>
@@ -291,6 +305,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Jep-yY-R8e"/>
                     <connections>
+                        <outlet property="cloudLogoLabel" destination="quN-Tt-LzM" id="wxZ-YV-YQW"/>
                         <outlet property="cloudLogoView" destination="jlv-gr-E4E" id="4zm-ut-YZI"/>
                         <outlet property="cloudTableView" destination="uQm-Me-xHp" id="A8A-5Y-RGH"/>
                     </connections>

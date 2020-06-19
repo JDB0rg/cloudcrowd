@@ -12,7 +12,7 @@ import CoreData
 class CloudImageController {
     
     var localCloudImages: [String] = [
-        "altocumulus-lenticularis","cumulus","cumulonimbus","cumulonimbus","altocumulus2","stratocumulus_stratiformis_perlucidus_translucidus","cirrus","cirrus2","altostratus","cirrostratus","cirrocumulus","altocumulus","nimbostratus"
+        "altocumulus-lenticularis","cumulus","cumulonimbus","altocumulus2","stratocumulus_stratiformis_perlucidus_translucidus","cirrus","cirrus2","altostratus","cirrostratus","cirrocumulus","altocumulus","nimbostratus"
     ]
     var remoteCloudImages: [UIImage] = []
     var photo: Photo?
@@ -35,21 +35,9 @@ class CloudImageController {
         return cloudImage ?? UIImage()
     }
     
-    func addPhoto(image: Photo) {
-        
-        
-        
-    }
-    
-    func populateImages() -> UIImage? {
-        for image in localCloudImages {
-            tempImage = UIImage(named: image)
-        }
-        return tempImage
-    }
+//    func getCategoryImage(from category: String) {
+//        let imageString = category.split(separator: " ")
+//        iconImage = UIImage(named: "C-\(imageString[0])")
+//    }
 }
 
-//func flip(lightSwitch: Light) {
-//    guard let lightIndex = switches.firstIndex(of: lightSwitch) else { return }
-//    switches[lightIndex].isOn.toggle()
-//}
