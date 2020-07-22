@@ -30,6 +30,8 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTheme()
+        
         cloudTableView.separatorStyle = .none
         cloudTableView.delegate = self
         cloudTableView.dataSource = self
@@ -72,12 +74,11 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
         
         guard let name = cloud.name else { return UITableViewCell() }
         //if cloudImageController.localCloudImages.contains(name) {
-        cell.cloudImageView?.image = UIImage(named: name.lowercased())
+        cell.cloudImageView?.image = UIImage(named: name.lowercased())?.circleMasked
         //}
         
 //        let cloudImage = UIImage(data: photo?.image ?? Data())
 //        cell.cloudImageView?.image = cloudImage
-        
         setupCellTheme(cell)
         
         return cell
@@ -132,15 +133,7 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     // MARK: - Private Methods
-    private func setupCellTheme(_ cell: CloudHomeTableViewCell) {
-        cell.contentView.clipsToBounds = true
-        cell.cloudImageView.layer.cornerRadius = 20
-        cell.containerView.setViewShadow(color: UIColor.black,
-                                         opacity: 0.3,
-                                         offset: CGSize(width: 1, height: 3),
-                                         radius: 5,
-                                         viewCornerRadius: 20)
-    }
+ 
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -151,6 +144,23 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
             cloudDetailVC.cloud = cloud
             cloudDetailVC.cloudController = cloudController
         }
+    }
+    
+    // MARK: - Theme
+    private func setupTheme() {
+        let backgroundImage = UIImage(named: "graygradient")
+        let imageView = UIImageView(image: backgroundImage)
+        self.cloudTableView.backgroundView = imageView
+    }
+    
+    private func setupCellTheme(_ cell: CloudHomeTableViewCell) {
+        cell.contentView.clipsToBounds = true
+        cell.cloudImageView.layer.cornerRadius = 20
+        cell.containerView.setViewShadow(color: UIColor.black,
+                                         opacity: 0.2,//opacity: 0.3,
+                                         offset: CGSize(width: 1, height: 3),//offset: CGSize(width: 1, height: 3),
+                                         radius: 2,//radius: 5,
+                                         viewCornerRadius: 20)
     }
 }
 

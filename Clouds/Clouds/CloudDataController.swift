@@ -14,6 +14,7 @@ class CloudDataController {
         self.decodeClouds()
     }
     
+    var userDefaults = UserDefaults.standard
     var clouds: [CloudObject] = []
     
     var cloudDataArray: [String] = []
