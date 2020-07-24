@@ -12,10 +12,16 @@ enum Appearance {
     
     // MARK: - Custom Font Initialization
     static let ramabhadra = UIFont(name: "Ramabhadra", size: UIFont.labelFontSize)
-    static let roboto = UIFont(name: "Roboto", size: UIFont.labelFontSize)
+    
+    static let robotoItalic = UIFont(name: "Roboto-Italic.ttf", size: UIFont.labelFontSize)
+    static let robotoLightItalic = UIFont(name: "Roboto-LightItalic", size: UIFont.labelFontSize)
+    static let robotoMedium = UIFont(name: "Roboto-Medium", size: UIFont.labelFontSize)
+    static let robotoMediumItalic = UIFont(name: "Roboto-MediumItalic", size: UIFont.labelFontSize)
+    static let robotoBold = UIFont(name: "Roboto-Bold", size: UIFont.labelFontSize)
+    static let robotoRegular = UIFont(name: "Roboto-Regular", size: UIFont.labelFontSize)
     
     static let ramabhadraDisplay = UIFont(name: "Ramabhadra", size: 40)
-    static let robotoBody = UIFont(name: "Roboto", size: 12)
+    static let robotoBody = UIFont(name: "Roboto-Regular", size: 12)
     
     // MARK: - Appearance Setup Theme Method
     static func setupTheme() {

@@ -19,21 +19,25 @@ class CloudDetailViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var subcategoryLabel: UILabel!
     @IBOutlet weak var prefixLabel: UILabel!
     
     @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var mainImageView: UIImageView!
     
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var elevationLabel: UILabel!
     @IBOutlet weak var compositionLabel: UILabel!
+    @IBOutlet weak var formationLabel: UILabel!
+    @IBOutlet weak var appearanceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTheme()
         updateViews()
+        
     }
     
     private func updateViews() {
@@ -44,14 +48,29 @@ class CloudDetailViewController: UIViewController {
         subcategoryLabel.text = cloud.subcategory
         prefixLabel.text = cloud.prefix
         
-        heightLabel.text = String(describing: cloud.height)
+        heightLabel.text = "Thousands of feet tall" //String(describing: cloud.height)
         elevationLabel.text = String(describing: cloud.elevation)
-        let compositionArr = cloud.composition?.map { String($0) }
-        let compositionString = compositionArr?.joined(separator: "")
-        compositionLabel.text = cloud.composition//compositionString
+        guard let compositionArr = cloud.composition else { return }
+            let temp = compositionArr
+                .replacingOccurrences(of: "[", with: "")
+                .replacingOccurrences(of: "]", with: "")
+                .replacingOccurrences(of: "\"", with: "")
         
-//        let mainImage = UIImage(named: "lukasz-lada-unsplash-cloud")
-//        mainImageView.image = mainImage
+        compositionLabel.text = temp
+        formationLabel.text = cloud.formation
+        appearanceLabel.text = cloud.appearance
     }
-
+    
+     private func setupTheme() {
+            let backgroundImage = UIImage(named: "sunsetgradient")
+            let imageView = UIImageView(image: backgroundImage)
+//            self.backgroundView.backgroundView = imageView
+        self.backgroundView.backgroundColor = UIColor(patternImage: UIImage(named: "graygradient")!)
+        
+        nameLabel.font = Appearance.robotoBold
+        
+//        compositionLabel.font = Appearance.robotoItalic
+//        formationLabel.font = Appearance.robotoBody
+        //appearanceLabel.font = Appearance.ramabhadra
+    }
 }
