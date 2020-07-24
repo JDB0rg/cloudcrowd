@@ -148,9 +148,9 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
     
     // MARK: - Theme
     private func setupTheme() {
-        let backgroundImage = UIImage(named: "graygradient")
-        let imageView = UIImageView(image: backgroundImage)
-        self.cloudTableView.backgroundView = imageView
+//        let backgroundImage = UIImage(named: "sunsetgradient")
+//        let imageView = UIImageView(image: backgroundImage)
+//        self.cloudTableView.backgroundView = imageView
     }
     
     private func setupCellTheme(_ cell: CloudHomeTableViewCell) {

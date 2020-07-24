@@ -30,7 +30,7 @@ class CloudHomeTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 30, left: 10, bottom: 30, right: 10))
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 16, left: 10, bottom: 06, right: 10))
     }
 
 }
