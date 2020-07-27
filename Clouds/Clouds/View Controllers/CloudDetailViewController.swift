@@ -38,18 +38,60 @@ class CloudDetailViewController: UIViewController {
         setupTheme()
         updateViews()
         
+        
+        
+        
+        
+        
+//               func foldArray(_ arr: [Int], times: Int) -> [Int] {
+//                   var foldedArr: [Int] = []
+//                   var array = arr
+//                   
+//                   if array.count == 1 {
+//                       return array
+//                   }
+//                   
+//                   guard let first = array.first,
+//                    let last = array.last else { return [0] }
+//
+//                   while !array.isEmpty {
+//                       
+//                    if array.count > 1 {
+//                        var sum = first + last
+//                        foldedArr.append(sum)
+//                        array.remove(at: first)
+//                         array.popLast()
+//                    } else {
+//                        
+//                    }
+//                   
+//                       
+//                   }
+//                    print(array)
+//                    print("Folded: \(foldedArr)")
+//                   return foldedArr
+//               }
+//
+//               print(foldArray([1,2,3,4,5], times: 1))
+        
+        
+        
+        
     }
     
     private func updateViews() {
         guard isViewLoaded else { return }
-        guard let cloud = cloud else { return }
+        guard let cloud = cloud,
+        let name = cloud.name else { return }
+        
+        logoImageView.image = UIImage(named: name.lowercased())?.circleMasked
         
         nameLabel.text = cloud.name
-        subcategoryLabel.text = cloud.subcategory
+        subcategoryLabel.text = cloud.category
         prefixLabel.text = cloud.prefix
         
-        heightLabel.text = "Thousands of feet tall" //String(describing: cloud.height)
-        elevationLabel.text = String(describing: cloud.elevation)
+        heightLabel.text = "Tall boy" //String(describing: cloud.height)
+        elevationLabel.text = "~" + String(describing: cloud.elevation) + " ft."
         guard let compositionArr = cloud.composition else { return }
             let temp = compositionArr
                 .replacingOccurrences(of: "[", with: "")
@@ -67,7 +109,7 @@ class CloudDetailViewController: UIViewController {
 //            self.backgroundView.backgroundView = imageView
         self.backgroundView.backgroundColor = UIColor(patternImage: UIImage(named: "graygradient")!)
         
-        nameLabel.font = Appearance.robotoBold
+        //nameLabel.font = Appearance.robotoBold
         
 //        compositionLabel.font = Appearance.robotoItalic
 //        formationLabel.font = Appearance.robotoBody
