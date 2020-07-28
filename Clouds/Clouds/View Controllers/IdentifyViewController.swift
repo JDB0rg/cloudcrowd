@@ -20,6 +20,7 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
     // MARK: - Controllers
     let cloudImageController = CloudImageController()
     
+    
     // MARK: - Outlets
     @IBOutlet weak var compareCollectionView: UICollectionView!
     @IBOutlet weak var comparisonView: UIView!
@@ -75,9 +76,9 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
 //        
 //        if collectionView == compareCollectionView {
             guard let cell = compareCollectionView.dequeueReusableCell(withReuseIdentifier: CompareCollectionViewCell.reuseIdentifier, for: indexPath) as? CompareCollectionViewCell else { fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)") }
-            let cloudPhoto = cloudImageController.localCloudImages[indexPath.row]
+            let cloudPhoto = cloudData.localCloudImages[indexPath.row]
             
-            cell.compareImageView.image = UIImage(named: cloudPhoto)
+            cell.compareImageView.image = UIImage(named: cloudPhoto)?.circleMasked
             let cloudLabel = cloudPhoto.capitalized
                 .replacingOccurrences(of: "2", with: "")
                 .replacingOccurrences(of: "_", with: " ")
