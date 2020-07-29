@@ -109,10 +109,10 @@ class CloudDetailViewController: UIViewController {
 //            self.backgroundView.backgroundView = imageView
         self.backgroundView.backgroundColor = UIColor(patternImage: UIImage(named: "graygradient")!)
         
-        //nameLabel.font = Appearance.robotoBold
+        //nameLabel.font = Appearance.ramabhadra
         
-//        compositionLabel.font = Appearance.robotoItalic
-//        formationLabel.font = Appearance.robotoBody
-        //appearanceLabel.font = Appearance.ramabhadra
+        compositionLabel.font = Appearance.robotoBody
+        formationLabel.font = Appearance.robotoBody
+        appearanceLabel.font = Appearance.robotoBody
     }
 }

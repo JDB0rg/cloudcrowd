@@ -4,11 +4,11 @@
 "category" : "Low-level clouds",
 "subcategory" : "Cumulus CloudData 1",
 "name" : "Cumulus",
-"prefix" : "Cumulo meaning heap.",
+"prefix" : "Their name comes from the latin word cumulo meaning heap.",
 
 "composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
-"formation" : "Individual mound-like clouds with flat bottoms and round fluffy tops that grow vertically.",
-"appearance" : "Individual mound-like clouds with flat bottoms and round fluffy tops that grow vertically. Individual mound-like clouds with flat bottoms and round fluffy tops that grow vertically. Individual mound-like clouds with flat bottoms and round fluffy tops that grow vertically. Individual mound-like clouds with flat bottoms and round fluffy tops that grow vertically. Individual mound-like clouds with flat bottoms and round fluffy tops that grow vertically.",
+"formation" : "Cumulus clouds form because of atmospheric convection. Air warmed by the ground begins to rise. As it does so the temperature of the air will start to drop. If the rising hot air reaches a certain level then relative humidity reaches saturation and water vapor is created resulting in a cumulus cloud.",
+"appearance" : "Individual mound-like clouds with flat bottoms and round tops often described as puffy, fluffy or pillowy. ",
 
 "weather" : {
     "precipitation" : "",
@@ -19,7 +19,7 @@
 "notes" : "",
 "facts" : [""],
 
-"elevation" : 6500,
+"elevation" : 1000,
 "height" : 0,
 
 "warning" : true,
