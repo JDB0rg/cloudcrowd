@@ -44,6 +44,7 @@
 		8CE7FD4D24CA7E75007EE812 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CE7FD4724CA7E75007EE812 /* Roboto-MediumItalic.ttf */; };
 		8CE7FD4E24CA7E75007EE812 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CE7FD4824CA7E75007EE812 /* Roboto-Light.ttf */; };
 		8CE7FD4F24CA7E75007EE812 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CE7FD4924CA7E75007EE812 /* Roboto-Italic.ttf */; };
+		8CE7FD5124D12590007EE812 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE7FD5024D12590007EE812 /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		8CE7FD4724CA7E75007EE812 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
 		8CE7FD4824CA7E75007EE812 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		8CE7FD4924CA7E75007EE812 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		8CE7FD5024D12590007EE812 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				112D3FBB2298E7D6000F7DA6 /* CloudHomeViewController.swift */,
+				8CE7FD5024D12590007EE812 /* MainTabBarController.swift */,
 				11B2658C237CB94500006F61 /* IdentifyViewController.swift */,
 				11B2658E237CB97600006F61 /* CloudDetailViewController.swift */,
 				11AFA66123FF712B00159423 /* CloudPhotoViewController.swift */,
@@ -350,6 +353,7 @@
 				8C6F39192423202500A6F302 /* Identify+Image.swift in Sources */,
 				1193748B240F10B40060A3C6 /* Cloud+Convenience.swift in Sources */,
 				11AFA66223FF712B00159423 /* CloudPhotoViewController.swift in Sources */,
+				8CE7FD5124D12590007EE812 /* MainTabBarController.swift in Sources */,
 				112D3FBC2298E7D6000F7DA6 /* CloudHomeViewController.swift in Sources */,
 				112D3FD12298E849000F7DA6 /* CloudObject.swift in Sources */,
 				112D3FBA2298E7D6000F7DA6 /* AppDelegate.swift in Sources */,

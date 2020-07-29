@@ -146,6 +146,22 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
+    private func setLogoImage() {
+    
+        let nav = self.navigationController?.navigationBar
+
+        nav?.barStyle = UIBarStyle.black
+        nav?.tintColor = UIColor.blue
+
+        let imageView = UIImageView(frame: CGRect(x: 10, y: 0, width: 10, height: 10))
+        imageView.contentMode = .scaleAspectFit
+
+        let image = UIImage(named: "cloudLogo")
+        imageView.image = image
+
+        navigationItem.titleView = imageView
+    }
+    
     // MARK: - Theme
     private func setupTheme() {
 //        let backgroundImage = UIImage(named: "sunsetgradient")
