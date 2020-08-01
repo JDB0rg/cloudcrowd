@@ -8,8 +8,15 @@
 
 import UIKit
 
+protocol Injectable: class {
+  func inject(data: CloudDataController)
+}
+
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate{
 
+    let cloudImageController = CloudImageController()
+     let cloudDataController = CloudDataController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,7 +27,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate{
         guard let identifyView = viewController as? CloudHomeViewController else {
             fatalError("Wrong view controller type")
         }
-        identifyView.cloudDataController = cloudDataController
+        //identifyView.cloudDataController = cloudDataController
     }
 
     /*
