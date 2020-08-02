@@ -44,8 +44,7 @@ class CloudPhotoViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? CloudPhotoCollectionViewCell else {
-            NSLog("Error dequeueing cell")
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? CloudPhotoCollectionViewCell else { NSLog("Error dequeueing cell")
             return UICollectionViewCell()
         }
         cell.testLabel.text = "Test this thing"

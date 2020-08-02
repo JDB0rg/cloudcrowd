@@ -8,19 +8,27 @@
 
 import UIKit
 
+protocol Injectable: class {
+  func inject(data: AnyObject)
+}
+
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate{
 
+    let cloudImageController = CloudImageController()
+    let cloudDataController = CloudDataController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.delegate = self
-    }
-    
-    private func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) {
-        guard let identifyView = viewController as? CloudHomeViewController else {
-            fatalError("Wrong view controller type")
+        
+        for navController in viewControllers! {
+            if let navController = navController as? UINavigationController,
+                let viewController = navController.viewControllers.first
+                    as? Injectable {
+                        viewController.inject(data: cloudDataController)
+            }
         }
-        identifyView.cloudDataController = cloudDataController
     }
 
     /*
