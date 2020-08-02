@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
+class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, Injectable {
 
     enum CellType: String {
         case contentCell
@@ -23,8 +23,7 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
     var cloud: Cloud?
     var photo: Photo?
     
-    var cloudController = CloudDataController()
-    var cloudImageController = CloudImageController()
+    var cloudDataController: CloudDataController?
     var weatherController = WeatherController()
     
     override func viewDidLoad() {
@@ -101,6 +100,11 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
+    func inject(data: AnyObject) {
+        self.cloudDataController = data as? CloudDataController
+        
+    }
+    
     // MARK: - Fetched Results Controller Delegate Methods
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         cloudTableView.beginUpdates()
@@ -142,7 +146,7 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
             let indexPath = cloudTableView.indexPathForSelectedRow else { return }
             let cloud = fetchedResultsController.object(at: indexPath)
             cloudDetailVC.cloud = cloud
-            cloudDetailVC.cloudController = cloudController
+            cloudDetailVC.cloudController = cloudDataController
         }
     }
     

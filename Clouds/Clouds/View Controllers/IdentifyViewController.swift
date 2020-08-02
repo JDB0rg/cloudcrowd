@@ -18,7 +18,7 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
     var cloud: Cloud?
     
     // MARK: - Controllers
-    let cloudImageController = CloudImageController()
+    var cloudImageController: CloudImageController?
     var cloudDataController: CloudDataController?
     
     // MARK: - Outlets
@@ -27,9 +27,10 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
     @IBOutlet weak var compareButton: UIButton!
     @IBOutlet weak var photoCollectionView: UICollectionView!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        print("Remote cloud images: \(cloudImageController.remoteCloudImages)")
+    override func viewDidAppear(_ animated: Bool) {
+        compareCollectionView?.reloadData()
+        photoCollectionView?.reloadData()
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,19 +77,19 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
 //        
 //        if collectionView == compareCollectionView {
             guard let cell = compareCollectionView.dequeueReusableCell(withReuseIdentifier: CompareCollectionViewCell.reuseIdentifier, for: indexPath) as? CompareCollectionViewCell else { fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)") }
-        let cloudPhoto = cloudDataController?.clouds[indexPath.row]
+            let cloudPhoto = cloudImageController?.localCloudImages[indexPath.row]
             
-        cell.compareImageView.image = UIImage(named: cloudPhoto?.name ?? "")?.circleMasked
-        let cloudLabel = cloudPhoto?.name?.capitalized
+        cell.compareImageView.image = UIImage(named: cloudPhoto ?? "")?.circleMasked
+        let cloudLabel = cloudPhoto?.capitalized
                 .replacingOccurrences(of: "2", with: "")
                 .replacingOccurrences(of: "_", with: " ")
                 .replacingOccurrences(of: "-", with: " ")
-            cell.testLabel.text = "\(cloudLabel)"
+            cell.testLabel.text = "\(String(describing: cloudLabel))"
             
             return cell
-        //}
-        
-        //return cell
+//        }
+//
+//        return cell
     }
     
     // MARK: - Fetched Results Controller
@@ -105,10 +106,10 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
         try? frc.performFetch()
         return frc
     }()
+    
+    func inject(data: AnyObject) {
+        self.cloudImageController = data as? CloudImageController
         
-    func inject(data: CloudDataController) {
-        self.cloudDataController = data
-
     }
     
     // MARK: - Fetched Results Controller Delegate Methods
