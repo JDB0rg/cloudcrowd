@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol Injectable: class {
-  func inject(data: AnyObject)
-}
-
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate{
 
     let cloudImageController = CloudImageController()

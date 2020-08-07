@@ -13,7 +13,7 @@ class IdentifyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var CloudImageView: UIImageView!
     @IBOutlet weak var testLabel: UILabel!
     
-    static let reuseIdentifier = "ComparisonImageCell"
+    static let reuseIdentifier = "ImageCell"
     var photo: Photo? {
         didSet{
             updateViews()
