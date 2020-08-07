@@ -22,13 +22,9 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
     var cloudDataController: CloudDataController?
     
     // MARK: - Outlets
-    @IBOutlet weak var compareCollectionView: UICollectionView!
-    @IBOutlet weak var comparisonView: UIView!
-    @IBOutlet weak var compareButton: UIButton!
     @IBOutlet weak var photoCollectionView: UICollectionView!
     
     override func viewDidAppear(_ animated: Bool) {
-        compareCollectionView?.reloadData()
         photoCollectionView?.reloadData()
         
     }
@@ -39,11 +35,6 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
         photoCollectionView.dataSource = self
         photoCollectionView.reloadData()
         
-        compareCollectionView.delegate = self
-        compareCollectionView.dataSource = self
-        compareCollectionView.reloadData()
-        
-        
     }
     
     // MARK: - Actions
@@ -51,45 +42,23 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
         presentImagePickerController()
     }
     
-    @IBAction func compareTapped(_ sender: Any) {
-        
-    }
-    
     // MARK:  Collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let compareCloudCount = cloudDataController?.clouds.count
-        if collectionView == compareCollectionView {
-            return compareCloudCount ?? 0
-        }
-        
-        return compareCloudCount ?? 0//fetchedIdentityResultsController.fetchedObjects?.count ?? 0
+        return cloudDataController?.clouds.count ?? 0 //fetchedIdentityResultsController.fetchedObjects?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: IdentifyCollectionViewCell.reuseIdentifier, for: indexPath) as? IdentifyCollectionViewCell else { fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)") }
         
-//        guard let cell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: IdentifyCollectionViewCell.reuseIdentifier, for: indexPath) as? IdentifyCollectionViewCell else { fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)") }
-//        
-//        let cloudCells = fetchedIdentityResultsController.object(at: indexPath)
-//        
-//        let cellImage = UIImage(data: cloudCells.image ?? Data())
-//        cell.CloudImageView.image = cellImage
-//        cell.testLabel.text = "nice test!"
-//        
-//        if collectionView == compareCollectionView {
-            guard let cell = compareCollectionView.dequeueReusableCell(withReuseIdentifier: CompareCollectionViewCell.reuseIdentifier, for: indexPath) as? CompareCollectionViewCell else { fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)") }
-            let cloudPhoto = cloudImageController?.localCloudImages[indexPath.row]
-            
-        cell.compareImageView.image = UIImage(named: cloudPhoto ?? "")?.circleMasked
-        let cloudLabel = cloudPhoto?.capitalized
-                .replacingOccurrences(of: "2", with: "")
-                .replacingOccurrences(of: "_", with: " ")
-                .replacingOccurrences(of: "-", with: " ")
-            cell.testLabel.text = "\(String(describing: cloudLabel))"
-            
-            return cell
-//        }
-//
-//        return cell
+        let cloudCells = cloudDataController?.clouds[indexPath.row] //fetchedIdentityResultsController.object(at: indexPath)
+        
+        let cellImage = UIImage(named: cloudCells?.name?.lowercased() ?? "")
+        cell.testLabel.text = "nice test!"
+        
+//        guard let name = cloud?.name else { return IdentifyCollectionViewCell() }
+        cell.CloudImageView?.image = cellImage
+        
+        return cell
     }
     
     // MARK: - Fetched Results Controller
@@ -109,6 +78,7 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
     
     func inject(data: AnyObject) {
         self.cloudImageController = data as? CloudImageController
+        self.cloudDataController = data as? CloudDataController
         
     }
     
@@ -134,15 +104,12 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
         }
     }
     
-    /*
+    
      // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+          override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
      }
-     */
     
     func presentImagePickerController() {
         
