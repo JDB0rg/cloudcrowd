@@ -72,12 +72,8 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
         cell.infoLabel.text = cloud.formation
         
         guard let name = cloud.name else { return UITableViewCell() }
-        //if cloudImageController.localCloudImages.contains(name) {
         cell.cloudImageView?.image = UIImage(named: name.lowercased())?.circleMasked
-        //}
         
-//        let cloudImage = UIImage(data: photo?.image ?? Data())
-//        cell.cloudImageView?.image = cloudImage
         setupCellTheme(cell)
         
         return cell

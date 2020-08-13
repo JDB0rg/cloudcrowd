@@ -52,6 +52,7 @@ class CloudDataController {
                 let decodedCloud = try JSONDecoder().decode([CloudObject].self, from: cloudData)
                 clouds = decodedCloud
                 
+                //: FIXIT - check if cloud is already in the array. 
                 for cloud in self.clouds {
                                         
                     guard let subcategory = cloud.subcategory,

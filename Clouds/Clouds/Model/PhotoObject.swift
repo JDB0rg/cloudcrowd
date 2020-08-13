@@ -10,4 +10,7 @@ import Foundation
 
 struct PhotoObject: Codable {
     var imageData: Data?
+    var title: String?
+    var note: String?
+    var timeStamp: Date
 }
