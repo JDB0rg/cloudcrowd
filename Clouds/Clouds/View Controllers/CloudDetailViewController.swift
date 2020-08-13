@@ -37,46 +37,6 @@ class CloudDetailViewController: UIViewController {
         
         setupTheme()
         updateViews()
-        
-        
-        
-        
-        
-        
-//               func foldArray(_ arr: [Int], times: Int) -> [Int] {
-//                   var foldedArr: [Int] = []
-//                   var array = arr
-//                   
-//                   if array.count == 1 {
-//                       return array
-//                   }
-//                   
-//                   guard let first = array.first,
-//                    let last = array.last else { return [0] }
-//
-//                   while !array.isEmpty {
-//                       
-//                    if array.count > 1 {
-//                        var sum = first + last
-//                        foldedArr.append(sum)
-//                        array.remove(at: first)
-//                         array.popLast()
-//                    } else {
-//                        
-//                    }
-//                   
-//                       
-//                   }
-//                    print(array)
-//                    print("Folded: \(foldedArr)")
-//                   return foldedArr
-//               }
-//
-//               print(foldArray([1,2,3,4,5], times: 1))
-        
-        
-        
-        
     }
     
     private func updateViews() {

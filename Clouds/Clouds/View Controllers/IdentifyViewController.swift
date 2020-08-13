@@ -42,27 +42,8 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
         presentImagePickerController()
     }
     
-    // MARK:  Collection View
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cloudDataController?.clouds.count ?? 0 //fetchedIdentityResultsController.fetchedObjects?.count ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: IdentifyCollectionViewCell.reuseIdentifier, for: indexPath) as? IdentifyCollectionViewCell else { fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)") }
-        
-        let cloudCells = cloudDataController?.clouds[indexPath.row] //fetchedIdentityResultsController.object(at: indexPath)
-        
-        let cellImage = UIImage(named: cloudCells?.name?.lowercased() ?? "")
-        cell.testLabel.text = "nice test!"
-        
-//        guard let name = cloud?.name else { return IdentifyCollectionViewCell() }
-        cell.CloudImageView?.image = cellImage
-        
-        return cell
-    }
-    
     // MARK: - Fetched Results Controller
-    lazy var fetchedIdentityResultsController: NSFetchedResultsController<Photo> = {
+    lazy var fetchedResultsController: NSFetchedResultsController<Photo> = {
         let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
         fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "image", ascending: true) ]
         
@@ -75,6 +56,24 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
         try? frc.performFetch()
         return frc
     }()
+    
+    // MARK:  Collection View
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return fetchedResultsController.fetchedObjects?.count ?? 0
+        //return cloudDataController?.clouds.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: IdentifyCollectionViewCell.reuseIdentifier, for: indexPath) as? IdentifyCollectionViewCell else { fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)") }
+        
+        let cloudCells = fetchedResultsController.object(at: indexPath) // cloudDataController?.clouds[indexPath.row]
+        
+        let cellImage = UIImage(data: cloudCells.image!)
+        cell.testLabel.text = "nice test!"
+        cell.CloudImageView?.image = cellImage
+        
+        return cell
+    }
     
     func inject(data: AnyObject) {
         self.cloudImageController = data as? CloudImageController
@@ -144,9 +143,10 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
         //: FIXIT - setting test image here
         //testImageView.image = comparisonImage //// Set new image like this
         
-        let imageData = comparisonImage?.pngData()
-        photo?.image = imageData
-        CoreDataStack.saveContext()
+        guard let imageData = comparisonImage?.pngData() else { return }
+        //photo?.image = UIImage(data: imageData)
+        cloudImageController?.createPhoto(image: imageData, title: "", note: "")
+        //CoreDataStack.saveContext()
         
         // 1. Convert to binary data which can be saves to CoreData
         // 2. Fetch from CD and put into the Collection view.
