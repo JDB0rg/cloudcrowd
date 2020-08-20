@@ -40,6 +40,7 @@
 		8C74C2BB2475F85400A87789 /* CompareCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74C2BA2475F85400A87789 /* CompareCollectionViewCell.swift */; };
 		8CBDA6D82488605500150386 /* PhotoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDA6D72488605500150386 /* PhotoObject.swift */; };
 		8CBDA6DA249C15C200150386 /* CloudsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDA6D9249C15C100150386 /* CloudsEnum.swift */; };
+		8CD2392224E87A1200092E0A /* IdentifyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD2392124E87A1200092E0A /* IdentifyDetailViewController.swift */; };
 		8CE7FD4A24CA7E75007EE812 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CE7FD4424CA7E75007EE812 /* Roboto-Medium.ttf */; };
 		8CE7FD4B24CA7E75007EE812 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CE7FD4524CA7E75007EE812 /* Roboto-Regular.ttf */; };
 		8CE7FD4C24CA7E75007EE812 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CE7FD4624CA7E75007EE812 /* Roboto-LightItalic.ttf */; };
@@ -85,6 +86,7 @@
 		8C74C2BA2475F85400A87789 /* CompareCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareCollectionViewCell.swift; sourceTree = "<group>"; };
 		8CBDA6D72488605500150386 /* PhotoObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoObject.swift; sourceTree = "<group>"; };
 		8CBDA6D9249C15C100150386 /* CloudsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsEnum.swift; sourceTree = "<group>"; };
+		8CD2392124E87A1200092E0A /* IdentifyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyDetailViewController.swift; sourceTree = "<group>"; };
 		8CE7FD4324CA7E5F007EE812 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		8CE7FD4424CA7E75007EE812 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		8CE7FD4524CA7E75007EE812 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				112D3FBB2298E7D6000F7DA6 /* CloudHomeViewController.swift */,
 				8CE7FD5024D12590007EE812 /* MainTabBarController.swift */,
 				11B2658C237CB94500006F61 /* IdentifyViewController.swift */,
+				8CD2392124E87A1200092E0A /* IdentifyDetailViewController.swift */,
 				11B2658E237CB97600006F61 /* CloudDetailViewController.swift */,
 				11AFA66123FF712B00159423 /* CloudPhotoViewController.swift */,
 			);
@@ -342,6 +345,7 @@
 				11AFA65C23FF6A2100159423 /* CoreDataStack.swift in Sources */,
 				112280C62360E3AF001ED0AD /* DropShadow.swift in Sources */,
 				112280C82360F356001ED0AD /* Border.swift in Sources */,
+				8CD2392224E87A1200092E0A /* IdentifyDetailViewController.swift in Sources */,
 				116F6D2723A048140094651F /* CloudImageController.swift in Sources */,
 				8CBDA6DA249C15C200150386 /* CloudsEnum.swift in Sources */,
 				8C28CADE2437E4E600633679 /* CloudImageDelegate.swift in Sources */,
