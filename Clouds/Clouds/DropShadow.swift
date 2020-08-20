@@ -50,13 +50,7 @@ extension UIView{
 
 extension UITableViewCell {
     func setCellDropShadow(cell: UITableViewCell, color: UIColor?, opacity: Float?, offset: CGSize?, radius: CGFloat, viewCornerRadius: CGFloat?) {
-//        cell.layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: viewCornerRadius ?? 0.0).cgPath
-//        cell.layer.shadowColor = color?.cgColor ?? UIColor.black.cgColor
-//        cell.layer.shadowOpacity = opacity ?? 1.0
-//        cell.layer.shadowOffset = offset ?? CGSize.zero
-//        cell.layer.shadowRadius = radius
-        
-        
+
         cell.contentView.layer.cornerRadius = 2.0
         cell.contentView.layer.borderWidth = 1.0
         cell.contentView.layer.borderColor = UIColor.clear.cgColor
@@ -68,8 +62,7 @@ extension UITableViewCell {
         cell.layer.shadowOpacity = 0.5
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: viewCornerRadius ?? 0.0).cgPath
-            
-            
+            	
             //[UIBezierPath bezierPathWithRoundedRect:cell.bounds cornerRadius:cell.contentView.layer.cornerRadius].cgPath
     }
 }

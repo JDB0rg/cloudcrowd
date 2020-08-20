@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate,  Injectable{
+class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource,  Injectable{
     
     // MARK: - Properties
     let context = CIContext(options: nil)
@@ -39,7 +39,7 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
     
     // MARK: - Actions
     @IBAction func addPhotoTapped(_ sender: Any) {
-        presentImagePickerController()
+        //presentImagePickerController()
     }
     
     // MARK: - Fetched Results Controller
@@ -110,62 +110,4 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
      // Pass the selected object to the new view controller.
      }
     
-    func presentImagePickerController() {
-        
-        let alert = UIAlertController(title: "Select Source", message: nil, preferredStyle: .actionSheet)
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { (_) in
-                
-                imagePicker.sourceType = .photoLibrary
-                self.present(imagePicker, animated: true, completion: nil)
-            }
-            alert.addAction(photoLibraryAction)
-        }
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let cameraAction = UIAlertAction(title: "Camera", style: .default) { (_) in
-                
-                imagePicker.sourceType = .camera
-                self.present(imagePicker, animated: true, completion: nil)
-            }
-            alert.addAction(cameraAction)
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alert.addAction(cancelAction)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        comparisonImage = info[.originalImage] as? UIImage
-        //: FIXIT - setting test image here
-        //testImageView.image = comparisonImage //// Set new image like this
-        
-        guard let imageData = comparisonImage?.pngData() else { return }
-        //photo?.image = UIImage(data: imageData)
-        cloudImageController?.createPhoto(image: imageData, title: "", note: "")
-        //CoreDataStack.saveContext()
-        
-        // 1. Convert to binary data which can be saves to CoreData
-        // 2. Fetch from CD and put into the Collection view.
-        //let photo = Photo(entity: NSEntityDescription, insertInto: NSManagedObjectContext?)
-        
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func grayscaleImage(_ image: UIImage) -> UIImage? {
-        
-        if let imageFilter = CIFilter(name: "CIColorControls") {
-            let startImage = CIImage(image: image)
-            imageFilter.setValue(startImage, forKey: kCIInputImageKey)
-            imageFilter.setValue(0.0, forKey: "inputSaturation")
-            
-            guard let outputImage = imageFilter.outputImage,
-                let cgImage = context.createCGImage(outputImage, from: outputImage.extent) else { return nil }
-            return UIImage(cgImage: cgImage)
-        }
-        return nil
-    }
 }
