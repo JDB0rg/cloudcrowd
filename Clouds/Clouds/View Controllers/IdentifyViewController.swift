@@ -66,9 +66,10 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: IdentifyCollectionViewCell.reuseIdentifier, for: indexPath) as? IdentifyCollectionViewCell else { fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)") }
         
-        let cloudCells = fetchedResultsController.object(at: indexPath) // cloudDataController?.clouds[indexPath.row]
+        let cloudCells = cloudImageController?.cloudPhotos[indexPath.row] //fetchedResultsController.object(at: indexPath) //
         
-        let cellImage = UIImage(data: cloudCells.image!)
+        guard let cloudData = cloudCells?.image else { return UICollectionViewCell() }
+        let cellImage = UIImage(data: cloudData)
         cell.testLabel.text = "nice test!"
         cell.CloudImageView?.image = cellImage
         
@@ -105,9 +106,12 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
     
     
      // MARK: - Navigation
-          override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowIdentifyDetailView" {
+            let idDetailVC = segue.destination as? IdentifyDetailViewController
+            idDetailVC?.photo = photo
+            idDetailVC?.cloudImageController = cloudImageController
+        }
+    }
     
 }

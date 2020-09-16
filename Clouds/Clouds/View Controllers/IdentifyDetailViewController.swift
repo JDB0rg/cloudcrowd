@@ -24,11 +24,9 @@ class IdentifyDetailViewController: UIViewController, UIImagePickerControllerDel
     
     @IBOutlet weak var TitleLabel: UILabel!
     @IBOutlet weak var TitleInputLabel: UILabel!
-    @IBOutlet weak var TitleTextField: UITextField!
     
     @IBOutlet weak var NotesLabel: UILabel!
     @IBOutlet weak var NotesInputLabel: UILabel!
-    @IBOutlet weak var NotesTextView: UITextView!
     
     @IBOutlet weak var EditButton: UIBarButtonItem!
     @IBOutlet weak var AddPhotoButton: UIButton!
@@ -38,20 +36,27 @@ class IdentifyDetailViewController: UIViewController, UIImagePickerControllerDel
     }
     
     @IBAction func AddPhotoTapped(_ sender: Any) {
+        resignFirstResponder()
+        
+//        let textFieldInput = TitleTextField.text
+//        let textViewInput = NotesTextView.text
+        
+        let imageData = comparisonImage?.pngData()
+        
+        //let _ = Photo(image: imageData, title: textFieldInput, note: textViewInput, timestamp: Date())
         presentImagePickerController()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TitleTextField.isHidden = true
-        NotesTextView.isHidden = true
+   
         setupTheme()
     }
     
     private func toggleHidden() {
-        TitleTextField.isHidden = !TitleTextField.isHidden
-        NotesTextView.isHidden = !NotesTextView.isHidden
+//        TitleTextField.isHidden = !TitleTextField.isHidden
+//        NotesTextView.isHidden = !NotesTextView.isHidden
     }
     
     
@@ -93,12 +98,11 @@ class IdentifyDetailViewController: UIViewController, UIImagePickerControllerDel
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         comparisonImage = info[.originalImage] as? UIImage
-        //: FIXIT - setting test image here
-        //testImageView.image = comparisonImage //// Set new image like this
+        CloudImageView.image = comparisonImage
         
         guard let imageData = comparisonImage?.pngData() else { return }
-        //photo?.image = UIImage(data: imageData)
-        cloudImageController?.createPhoto(image: imageData, title: "", note: "")
+        photo?.image = imageData
+       
         //CoreDataStack.saveContext()
         
         // 1. Convert to binary data which can be saves to CoreData

@@ -33,6 +33,7 @@
 		11B2658D237CB94500006F61 /* IdentifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2658C237CB94500006F61 /* IdentifyViewController.swift */; };
 		11B2658F237CB97600006F61 /* CloudDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2658E237CB97600006F61 /* CloudDetailViewController.swift */; };
 		11B26597237E62DE00006F61 /* CloudData.json in Resources */ = {isa = PBXBuildFile; fileRef = 11B26596237E62DE00006F61 /* CloudData.json */; };
+		8C1AA8992503F7C80051A776 /* IdentifyCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1AA8982503F7C80051A776 /* IdentifyCreateViewController.swift */; };
 		8C28CADE2437E4E600633679 /* CloudImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28CADD2437E4E600633679 /* CloudImageDelegate.swift */; };
 		8C6F39192423202500A6F302 /* Identify+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F39182423202500A6F302 /* Identify+Image.swift */; };
 		8C737ABC24DB6A1F00F32E9B /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C737ABB24DB6A1F00F32E9B /* Protocols.swift */; };
@@ -79,6 +80,7 @@
 		11B2658C237CB94500006F61 /* IdentifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyViewController.swift; sourceTree = "<group>"; };
 		11B2658E237CB97600006F61 /* CloudDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudDetailViewController.swift; sourceTree = "<group>"; };
 		11B26596237E62DE00006F61 /* CloudData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CloudData.json; sourceTree = "<group>"; };
+		8C1AA8982503F7C80051A776 /* IdentifyCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyCreateViewController.swift; sourceTree = "<group>"; };
 		8C28CADD2437E4E600633679 /* CloudImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudImageDelegate.swift; sourceTree = "<group>"; };
 		8C6F39182423202500A6F302 /* Identify+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Identify+Image.swift"; sourceTree = "<group>"; };
 		8C737ABB24DB6A1F00F32E9B /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				8CD2392124E87A1200092E0A /* IdentifyDetailViewController.swift */,
 				11B2658E237CB97600006F61 /* CloudDetailViewController.swift */,
 				11AFA66123FF712B00159423 /* CloudPhotoViewController.swift */,
+				8C1AA8982503F7C80051A776 /* IdentifyCreateViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C1AA8992503F7C80051A776 /* IdentifyCreateViewController.swift in Sources */,
 				11AFA65C23FF6A2100159423 /* CoreDataStack.swift in Sources */,
 				112280C62360E3AF001ED0AD /* DropShadow.swift in Sources */,
 				112280C82360F356001ED0AD /* Border.swift in Sources */,

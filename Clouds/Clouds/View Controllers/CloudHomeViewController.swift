@@ -37,6 +37,7 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
         
         cloudLogoLabel.text = "CloudCrowd"
         //weatherController.fetchWeather(lon: 139, lat: 35)
+        
     }
     
     // MARK: - Fetched Results Controller
