@@ -27,6 +27,21 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate{
         }
     }
 
+    func configTabBar() {
+//        UITabBar.appearance().isTranslucent = true
+//        UITabBar.appearance().backgroundColor = .clear
+//        UITabBar.appearance().tintColor = .clear
+//            
+//        self.tabBarController?.tabBar.backgroundColor = .clear
+//        self.tabBarController?.tabBar.tintColor = .clear
+//            
+//        self.tabBarController?.tabBar.backgroundImage = UIImage()
+//        self.tabBarController?.tabBar.shadowImage = UIImage()
+//        
+//        self.tabBar.backgroundColor = .clear
+//        self.tabBar.tintColor = .clear
+    }
+    
     /*
     // MARK: - Navigation
 

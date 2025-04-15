@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Cloud" representedClassName="Cloud" syncable="YES" codeGenerationType="class">
         <attribute name="appearance" optional="YES" attributeType="String"/>
         <attribute name="atmosphere" optional="YES" attributeType="String"/>
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="composition" optional="YES" attributeType="String"/>
-        <attribute name="elevation" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="elevation" optional="YES" attributeType="String"/>
         <attribute name="facts" optional="YES" attributeType="String"/>
         <attribute name="formation" optional="YES" attributeType="String"/>
-        <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="height" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="message" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="notes" optional="YES" attributeType="String"/>
@@ -25,9 +25,4 @@
         <relationship name="cloud" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cloud" inverseName="photo" inverseEntity="Cloud"/>
     </entity>
     <entity name="Weather" representedClassName="Weather" syncable="YES" codeGenerationType="class"/>
-    <elements>
-        <element name="Cloud" positionX="-63" positionY="-18" width="128" height="268"/>
-        <element name="Photo" positionX="-36" positionY="9" width="128" height="118"/>
-        <element name="Weather" positionX="-54" positionY="-9" width="128" height="43"/>
-    </elements>
 </model>

@@ -2,12 +2,12 @@
 
 {
 "category" : "Low-level clouds",
-"subcategory" : "Cumulus CloudData 1",
+"subcategory" : "General Cloud Category",
 "name" : "Cumulus",
-"prefix" : "Their name comes from the latin word cumulo meaning heap.",
+"prefix" : "Cu",
 
 "composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
-"formation" : "Cumulus clouds form because of atmospheric convection. Air warmed by the ground begins to rise. As it does so the temperature of the air will start to drop. If the rising hot air reaches a certain level then relative humidity reaches saturation and water vapor is created resulting in a cumulus cloud.",
+"formation" : "Their name comes from the latin word cumulo meaning heap. Cumulus clouds form because of atmospheric convection. Air warmed by the ground begins to rise. As it does so the temperature of the air will start to drop. If the rising hot air reaches a certain level then relative humidity reaches saturation and water vapor is created resulting in a cumulus cloud.",
 "appearance" : "Individual mound-like clouds with flat bottoms and round tops often described as puffy, fluffy or pillowy. ",
 
 "weather" : {
@@ -19,7 +19,7 @@
 "notes" : "",
 "facts" : [""],
 
-"elevation" : 1000,
+"elevation" : "1000 - 5000",
 "height" : 0,
 
 "warning" : true,
@@ -28,9 +28,9 @@
 
 {
 "category" : "Low-level clouds",
-"subcategory" : "Cumulus CloudData 2",
+"subcategory" : "Cloud Subcategory",
 "name" : "Cumulonimbus",
-"prefix" : "Cumulo meaning heap.",
+"prefix" : "Cn",
 
 "composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
 "formation" : "With enough atmospheric instability, moisture, and lift strong updrafts can develop in cumulus clouds leading to thunderstorm and heavy rain-producing formations",
@@ -45,7 +45,7 @@
 "notes" : "",
 "facts" : [""],
 
-"elevation" : 6500,
+"elevation" : "6500",
 "height" : 0,
 
 "warning" : true,
@@ -54,12 +54,12 @@
 
 {
 "category" : "Low-level clouds",
-"subcategory" : "Cumulus CloudData 3",
+"subcategory" : "General Cloud Category",
 "name" : "Stratus",
-"prefix" : "Latin prefix strato-, meaning layer",
+"prefix" : "St",
 
 "composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
-"formation" : "Warm moist air rises and depressurizes and settles lower to the ground according to ideal temperatures",
+"formation" : "Latin prefix strato-, meaning layer. Warm moist air rises and depressurizes and settles lower to the ground according to ideal temperatures",
 "appearance" : "Develop horizontally in a flat uniform sheet formation resembling a gray layer of cloud cover with little to no precipitation or drizzle",
 
 "weather" : {
@@ -71,21 +71,21 @@
 "notes" : "",
 "facts" : ["Can accompany Crepuscular rays which happen most frequently with Stratus clouds."],
 
-"elevation" : 6500,
+"elevation" : "6500",
 "height" : 0,
 
-"warning" : true,
-"warningMessage" : "Cumulus clouds are all capable of developing into more serious storm clouds.",
+"warning" : false,
+"warningMessage" : "",
 },
 
 {
 "category" : "Low-level clouds",
-"subcategory" : "Cumulus CloudData 4",
+"subcategory" : "Cloud Subcategory",
 "name" : "Stratocumulus",
-"prefix" : "Latin prefix strato-, meaning layer",
+"prefix" : "Sc",
 
 "composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
-"formation" : "Warm moist air rises and depressurizes and settles lower to the ground according to ideal temperatures",
+"formation" : "Latin prefix strato-, meaning layer. Stratocumulus clouds can form when a layer of stratus clouds begins to breaks up or striate. They can also be formed as cumulus clouds begin to flatten due to inversion of temperature or wind shear, and then become stratocumulus clouds",
 "appearance" : "Develop horizontally in a flat uniform sheet formation resembling a gray layer of cloud cover with little to no precipitation or drizzle",
 
 "weather" : {
@@ -97,11 +97,37 @@
 "notes" : "",
 "facts" : [""],
 
-"elevation" : 6500,
+"elevation" : "6500",
 "height" : 0,
 
 "warning" : true,
 "warningMessage" : "Cumulus clouds are all capable of developing into more serious storm clouds.",
+},
+
+{
+"category" : "High Altitude clouds",
+"subcategory" : "General Cloud Category",
+"name" : "Cirrus",
+"prefix" : "Ci",
+
+"composition" : ["ice crystals", "ice particles"],
+"formation" : "Latin meaning curl of hair or fringe. Cirrus clouds form from the ascent of dry air, making the small quantity of water vapour in the air undergo deposition into ice (to change from a gas directly into a solid). Cirrus is made up completely of ice crystals, which provides their white colour and form in a wide range of shapes and sizes.",
+"appearance" : "Cirrus clouds are white, wispy, and feathery, and can look like hair or feathers in the wind. They can appear in patches or narrow bands, and can have a silky or fibrous sheen.",
+
+"weather" : {
+    "precipitation" : "They may predict the arrival or rainstorms.",
+    "temperature" : "varies",
+},
+"atmosphere" : "",
+
+"notes" : "",
+"facts" : [""],
+
+"elevation" : "166000",
+"height" : 0,
+
+"warning" : false,
+"warningMessage" : "",
 }
 
 ]

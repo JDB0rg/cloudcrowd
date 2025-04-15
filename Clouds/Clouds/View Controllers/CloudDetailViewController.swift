@@ -48,10 +48,10 @@ class CloudDetailViewController: UIViewController {
         
         nameLabel.text = cloud.name
         subcategoryLabel.text = cloud.category
-        prefixLabel.text = cloud.prefix
+        prefixLabel.text = "Prefix: " + (cloud.prefix ?? "") 
         
-        heightLabel.text = "Tall boy" //String(describing: cloud.height)
-        elevationLabel.text = "~" + String(describing: cloud.elevation) + " ft."
+        heightLabel.text = "TBD" //String(describing: cloud.height)
+        elevationLabel.text = "~" + String(describing: cloud.elevation ?? "") + " ft."
         guard let compositionArr = cloud.composition else { return }
             let temp = compositionArr
                 .replacingOccurrences(of: "[", with: "")

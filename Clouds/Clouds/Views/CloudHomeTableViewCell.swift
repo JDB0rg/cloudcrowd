@@ -12,6 +12,7 @@ class CloudHomeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var elevationLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var cloudImageView: UIImageView!
     @IBOutlet weak var containerView: UIView!

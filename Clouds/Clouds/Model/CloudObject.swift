@@ -24,7 +24,7 @@ struct CloudObject: Codable {
     
     var notes: String?
     var facts: [String]?
-    var elevation: Int?
+    var elevation: String?
     var height: Int?
     
     var warning: Bool = true
@@ -83,7 +83,7 @@ struct CloudObject: Codable {
                 facts?.append(fact)
             }
         }
-        elevation  = try container.decode(Int.self, forKey: .elevation)
+        elevation  = try container.decode(String.self, forKey: .elevation)
         height = try container.decode(Int.self, forKey: .height)
         
         warningMessage = try container.decode(String.self, forKey: .warningMessage)

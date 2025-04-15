@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Clouds
 //
-//  Created by Madison Waters on 5/24/19.
+//  Created by Jonah Bergevin on 5/24/19.
 //  Copyright © 2019 EmPact. All rights reserved.
 //
 
@@ -42,7 +42,7 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: - Fetched Results Controller
     lazy var fetchedResultsController: NSFetchedResultsController<Cloud> = {
         let fetchRequest: NSFetchRequest<Cloud> = Cloud.fetchRequest()
-        fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "category", ascending: true)]
+        fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "name", ascending: true)]
         
         let moc = CoreDataStack.context
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
@@ -68,8 +68,15 @@ class CloudHomeViewController: UIViewController, UITableViewDataSource, UITableV
         let cloud = fetchedResultsController.object(at: indexPath)
         
         cell.titleLabel.text = cloud.name
-        cell.subtitleLabel.text = cloud.subcategory
-        cell.infoLabel.text = cloud.formation
+        cell.subtitleLabel.text = cloud.prefix
+        cell.infoLabel.text = cloud.appearance
+        cell.elevationLabel.text = "Elevation: \(String(describing: cloud.elevation ?? "")) ft."
+        
+        cell.titleLabel.lastBaselineAnchor.constraint(equalTo:
+        cell.titleLabel.lastBaselineAnchor).isActive = true
+        
+        cell.subtitleLabel.lastBaselineAnchor.constraint(equalTo:
+        cell.subtitleLabel.lastBaselineAnchor).isActive = true
         
         guard let name = cloud.name else { return UITableViewCell() }
         cell.cloudImageView?.image = UIImage(named: name.lowercased())?.circleMasked

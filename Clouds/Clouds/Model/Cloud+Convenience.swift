@@ -25,8 +25,8 @@ extension Cloud {
     
                     notes: String?,
                     facts: String?,
-                    elevation: Int16,
-                    height: Int16,
+                    elevation: String,
+                    height: Int32,
                     warning: Bool = true,
                     message: String = "",
                     
