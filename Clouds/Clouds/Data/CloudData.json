@@ -1,134 +1,216 @@
 [
-
-{
-"category" : "Low-level clouds",
-"subcategory" : "General Cloud Category",
-"name" : "Cumulus",
-"prefix" : "Cu",
-
-"composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
-"formation" : "Their name comes from the latin word cumulo meaning heap. Cumulus clouds form because of atmospheric convection. Air warmed by the ground begins to rise. As it does so the temperature of the air will start to drop. If the rising hot air reaches a certain level then relative humidity reaches saturation and water vapor is created resulting in a cumulus cloud.",
-"appearance" : "Individual mound-like clouds with flat bottoms and round tops often described as puffy, fluffy or pillowy. ",
-
-"weather" : {
-    "precipitation" : "",
-    "temperature" : "",
-},
-"atmosphere" : "",
-
-"notes" : "",
-"facts" : [""],
-
-"elevation" : "1000 - 5000",
-"height" : 0,
-
-"warning" : true,
-"warningMessage" : "Cumulus clouds are all capable of developing into more serious storm clouds.",
-},
-
-{
-"category" : "Low-level clouds",
-"subcategory" : "Cloud Subcategory",
-"name" : "Cumulonimbus",
-"prefix" : "Cn",
-
-"composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
-"formation" : "With enough atmospheric instability, moisture, and lift strong updrafts can develop in cumulus clouds leading to thunderstorm and heavy rain-producing formations",
-"appearance" : "Cumulus clouds that have grown to towering heights and usually mean a storm is coming",
-
-"weather" : {
-    "precipitation" : "",
-    "temperature" : "",
-},
-"atmosphere" : "",
-
-"notes" : "",
-"facts" : [""],
-
-"elevation" : "6500",
-"height" : 0,
-
-"warning" : true,
-"warningMessage" : "Cumulus clouds are all capable of developing into more serious storm clouds.",
-},
-
-{
-"category" : "Low-level clouds",
-"subcategory" : "General Cloud Category",
-"name" : "Stratus",
-"prefix" : "St",
-
-"composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
-"formation" : "Latin prefix strato-, meaning layer. Warm moist air rises and depressurizes and settles lower to the ground according to ideal temperatures",
-"appearance" : "Develop horizontally in a flat uniform sheet formation resembling a gray layer of cloud cover with little to no precipitation or drizzle",
-
-"weather" : {
-    "precipitation" : "very little to no precipitation",
-    "temperature" : "varies",
-},
-"atmosphere" : "",
-
-"notes" : "",
-"facts" : ["Can accompany Crepuscular rays which happen most frequently with Stratus clouds."],
-
-"elevation" : "6500",
-"height" : 0,
-
-"warning" : false,
-"warningMessage" : "",
-},
-
-{
-"category" : "Low-level clouds",
-"subcategory" : "Cloud Subcategory",
-"name" : "Stratocumulus",
-"prefix" : "Sc",
-
-"composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
-"formation" : "Latin prefix strato-, meaning layer. Stratocumulus clouds can form when a layer of stratus clouds begins to breaks up or striate. They can also be formed as cumulus clouds begin to flatten due to inversion of temperature or wind shear, and then become stratocumulus clouds",
-"appearance" : "Develop horizontally in a flat uniform sheet formation resembling a gray layer of cloud cover with little to no precipitation or drizzle",
-
-"weather" : {
-    "precipitation" : "very little to no precipitation",
-    "temperature" : "varies",
-},
-"atmosphere" : "",
-
-"notes" : "",
-"facts" : [""],
-
-"elevation" : "6500",
-"height" : 0,
-
-"warning" : true,
-"warningMessage" : "Cumulus clouds are all capable of developing into more serious storm clouds.",
-},
-
-{
-"category" : "High Altitude clouds",
-"subcategory" : "General Cloud Category",
-"name" : "Cirrus",
-"prefix" : "Ci",
-
-"composition" : ["ice crystals", "ice particles"],
-"formation" : "Latin meaning curl of hair or fringe. Cirrus clouds form from the ascent of dry air, making the small quantity of water vapour in the air undergo deposition into ice (to change from a gas directly into a solid). Cirrus is made up completely of ice crystals, which provides their white colour and form in a wide range of shapes and sizes.",
-"appearance" : "Cirrus clouds are white, wispy, and feathery, and can look like hair or feathers in the wind. They can appear in patches or narrow bands, and can have a silky or fibrous sheen.",
-
-"weather" : {
-    "precipitation" : "They may predict the arrival or rainstorms.",
-    "temperature" : "varies",
-},
-"atmosphere" : "",
-
-"notes" : "",
-"facts" : [""],
-
-"elevation" : "166000",
-"height" : 0,
-
-"warning" : false,
-"warningMessage" : "",
-}
-
+    
+    {
+        "category" : "Low-level clouds",
+        "subcategory" : "General Cloud Category",
+        "name" : "Cumulus",
+        "prefix" : "Cu",
+        "composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
+        "formation" : "Their name comes from the latin word cumulo meaning heap. Cumulus clouds form because of atmospheric convection. Air warmed by the ground begins to rise. As it does so the temperature of the air will start to drop. If the rising hot air reaches a certain level then relative humidity reaches saturation and water vapor is created resulting in a cumulus cloud.",
+        "appearance" : "Individual mound-like clouds with flat bottoms and round tops often described as puffy, fluffy or pillowy. ",
+        "weather" : {
+            "precipitation" : "",
+            "temperature" : "",
+        },
+        "atmosphere" : "",
+        "notes" : "",
+        "facts" : [""],
+        "elevation" : "1000 - 5000",
+        "height" : 0,
+        "warning" : true,
+        "warningMessage" : "Cumulus clouds are all capable of developing into more serious storm clouds.",
+    },
+    
+    {
+        "category" : "Low-level clouds",
+        "subcategory" : "Cloud Subcategory",
+        "name" : "Cumulonimbus",
+        "prefix" : "Cn",
+        "composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
+        "formation" : "With enough atmospheric instability, moisture, and lift strong updrafts can develop in cumulus clouds leading to thunderstorm and heavy rain-producing formations",
+        "appearance" : "Cumulus clouds that have grown to towering heights and usually mean a storm is coming",
+        "weather" : {
+            "precipitation" : "",
+            "temperature" : "",
+        },
+        "atmosphere" : "",
+        "notes" : "",
+        "facts" : [""],
+        "elevation" : "6500",
+        "height" : 0,
+        "warning" : true,
+        "warningMessage" : "Cumulus clouds are all capable of developing into more serious storm clouds.",
+    },
+    
+    {
+        "category" : "Low-level clouds",
+        "subcategory" : "General Cloud Category",
+        "name" : "Stratus",
+        "prefix" : "St",
+        "composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
+        "formation" : "Latin prefix strato-, meaning layer. Warm moist air rises and depressurizes and settles lower to the ground according to ideal temperatures",
+        "appearance" : "Develop horizontally in a flat uniform sheet formation resembling a gray layer of cloud cover with little to no precipitation or drizzle",
+        "weather" : {
+            "precipitation" : "very little to no precipitation",
+            "temperature" : "varies",
+        },
+        "atmosphere" : "",
+        "notes" : "",
+        "facts" : ["Can accompany Crepuscular rays which happen most frequently with Stratus clouds."],
+        "elevation" : "6500",
+        "height" : 0,
+        "warning" : false,
+        "warningMessage" : "",
+    },
+    
+    {
+        "category": "Low to mid-level",
+        "subcategory": "Rain cloud",
+        "name": "Nimbostratus",
+        "prefix": "Ns",
+        "composition": ["Water droplets and ice crystals"],
+        "formation": "Warm, moist air slowly rises over a broad area",
+        "appearance": "Thick, dark, gray blanket-like clouds",
+        "weather" : {
+            "precipitation" : "Continuous, steady precipitation",
+            "temperature" : "",
+        },
+        "atmosphere": "Mid to lower troposphere",
+        "notes": "Often obscures the sun completely",
+        "facts": ["'Nimbo' means rain in Latin"],
+        "elevation": "Low to Middle",
+        "height": 10000,
+        "warning" : false,
+        "warningMessage" : "",
+    },
+    
+    {
+        "category": "Mid-level",
+        "subcategory": "Layered cloud",
+        "name": "Altostratus",
+        "prefix": "As",
+        "composition": ["Water droplets and ice crystals"],
+        "formation": "Large-scale lifting of moist air, often preceding a warm front",
+        "appearance": "Gray or blue-gray sheet, sun may be visible but blurred",
+        "weather" : {
+            "precipitation" : "Often brings light precipitation",
+            "temperature" : "",
+        },
+        "atmosphere": "Mid-troposphere",
+        "notes": "Often a signal of incoming steady rain or snow",
+        "facts": ["Thicker than cirrostratus, lacks distinct features"],
+        "elevation": "Middle",
+        "height": 6500,
+        "warning" : false,
+        "warningMessage" : "",
+    },
+    
+    {
+        "category": "Mid-level",
+        "subcategory": "Puffy cloud",
+        "name": "Altocumulus",
+        "prefix": "Ac",
+        "composition": ["Water droplets can contain ice"],
+        "formation": "Convection and turbulence in the mid-troposphere",
+        "appearance": "White or gray patches, rolls or rounded masses",
+        "weather" : {
+            "precipitation" : "Usually fair, but can precede thunderstorms",
+            "temperature" : "",
+        },
+        "atmosphere": "Mid-troposphere",
+        "notes": "Often confused with cirrocumulus, but elements are larger and lower",
+        "facts": ["Appearance in morning can indicate afternoon storms"],
+        "elevation": "Middle",
+        "height": 6500,
+        "warning" : false,
+        "warningMessage" : "",
+    },
+    
+    {
+        "category" : "Low-level clouds",
+        "subcategory" : "Cloud Subcategory",
+        "name" : "Stratocumulus",
+        "prefix" : "Sc",
+        "composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
+        "formation" : "Latin prefix strato-, meaning layer. Stratocumulus clouds can form when a layer of stratus clouds begins to breaks up or striate. They can also be formed as cumulus clouds begin to flatten due to inversion of temperature or wind shear, and then become stratocumulus clouds",
+        "appearance" : "Develop horizontally in a flat uniform sheet formation resembling a gray layer of cloud cover with little to no precipitation or drizzle",
+        "weather" : {
+            "precipitation" : "very little to no precipitation",
+            "temperature" : "varies",
+        },
+        "atmosphere" : "",
+        "notes" : "",
+        "facts" : [""],
+        "elevation" : "6500",
+        "height" : 0,
+        "warning" : true,
+        "warningMessage" : "Cumulus clouds are all capable of developing into more serious storm clouds.",
+    },
+    
+    {
+        "category" : "High Altitude clouds",
+        "subcategory" : "General Cloud Category",
+        "name" : "Cirrus",
+        "prefix" : "Ci",
+        "composition" : ["ice crystals", "ice particles"],
+        "formation" : "Latin meaning curl of hair or fringe. Cirrus clouds form from the ascent of dry air, making the small quantity of water vapour in the air undergo deposition into ice (to change from a gas directly into a solid). Cirrus is made up completely of ice crystals, which provides their white colour and form in a wide range of shapes and sizes.",
+        "appearance" : "Cirrus clouds are white, wispy, and feathery, and can look like hair or feathers in the wind. They can appear in patches or narrow bands, and can have a silky or fibrous sheen.",
+        "weather" : {
+            "precipitation" : "They may predict the arrival or rainstorms.",
+            "temperature" : "varies",
+        },
+        "atmosphere" : "",
+        "notes" : "",
+        "facts" : [""],
+        "elevation" : "166000",
+        "height" : 0,
+        "warning" : false,
+        "warningMessage" : "",
+    },
+    
+    {
+        "category": "High-level",
+        "subcategory": "Layered/Ice crystal cloud",
+        "name": "Cirrostratus",
+        "prefix": "Cs",
+        "composition": ["Ice crystals"],
+        "formation": "Gradual lifting of a wide air mass, often preceding a warm front",
+        "appearance": "Transparent, thin veil-like, can cover whole sky",
+        "weather" : {
+            "precipitation" : "Often precedes precipitation; halo phenomenon around the sun/moon.",
+            "temperature" : "",
+        },
+        "atmosphere": "Upper troposphere",
+        "notes": "Can indicate precipitation within 12–24 hours",
+        "facts": ["Associated with optical phenomena like halos"],
+        "elevation": "High",
+        "height": 20000,
+        "warning" : false,
+        "warningMessage" : "",
+    },
+    
+    {
+        "category": "High-level",
+        "subcategory": "Puffy/Ice crystal cloud",
+        "name": "Cirrocumulus",
+        "prefix": "Cc",
+        "composition": ["Ice crystals (some supercooled water possible)"],
+        "formation": "Turbulence in upper troposphere",
+        "appearance": "Small, white puffs, often in rows or ripples (mackerel sky)",
+        "weather" : {
+            "precipitation" : "Fair weather but can suggest storm development",
+            "temperature" : "",
+        },
+        "atmosphere": "Upper troposphere",
+        "notes": "Rare and short-lived; no shadows cast",
+        "facts": ["Can be mistaken for altocumulus, but occurs higher and has smaller elements"],
+        "elevation": "High",
+        "height": 16500,
+        "warning" : false,
+        "warningMessage" : "",
+    },
+    
+    
+    
 ]
-
+ 
