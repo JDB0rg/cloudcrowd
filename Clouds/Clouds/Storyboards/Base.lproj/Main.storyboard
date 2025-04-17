@@ -433,7 +433,7 @@ Cg
                     <navigationItem key="navigationItem" id="v9A-AC-jfu">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aP1-Dj-lfZ">
                             <connections>
-                                <action selector="addPhotoTapped:" destination="uL8-dH-oii" id="g5T-XD-CvR"/>
+                                <action selector="addImage:" destination="5gP-m4-FOW" id="BVH-AB-5Xa"/>
                                 <segue destination="6Yb-rI-hA6" kind="show" id="Nyy-oi-27t"/>
                             </connections>
                         </barButtonItem>
@@ -443,6 +443,7 @@ Cg
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGt-Gf-REB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5gP-m4-FOW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1131.8840579710145" y="323.4375"/>
         </scene>

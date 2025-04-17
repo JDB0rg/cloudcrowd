@@ -94,14 +94,16 @@ class IdentifyDetailViewController: UIViewController, UIImagePickerControllerDel
         
         comparisonImage = info[.originalImage] as? UIImage
         //: FIXIT - setting test image here
-        //testImageView.image = comparisonImage //// Set new image like this
         
-        guard let imageData = comparisonImage?.pngData() else { return }
-        //photo?.image = UIImage(data: imageData)
+        guard let image = comparisonImage else { return }
+        guard let imageData = image.pngData() else { return }
+        
+        photo?.image = imageData
         cloudImageController?.createPhoto(image: imageData, title: "", note: "")
-        //CoreDataStack.saveContext()
+        CoreDataStack.saveContext()
         
-        // 1. Convert to binary data which can be saves to CoreData
+        
+        // 1. Convert to binary data which can be saved to CoreData
         // 2. Fetch from CD and put into the Collection view.
         //let photo = Photo(entity: NSEntityDescription, insertInto: NSManagedObjectContext?)
         

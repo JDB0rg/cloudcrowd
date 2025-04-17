@@ -12,6 +12,9 @@ class IdentifyCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var CloudImageView: UIImageView!
     @IBOutlet weak var testLabel: UILabel!
+    @IBAction func addImage(_ sender: Any) {
+        print("Did I do this right?")
+    }
     
     static let reuseIdentifier = "ImageCell"
     var photo: Photo? {
