@@ -27,9 +27,13 @@ class IdentifyCollectionViewCell: UICollectionViewCell {
     }
     
     private func updateViews() {
-        guard let photo = photo else { return }
-        
         CloudImageView.isHidden = true
+        
+        setCellImage()
+    }
+    
+    private func setCellImage() {
+        guard let photo = photo else { return }
         
         let cellImage = UIImage(data: photo.image ?? Data())
         CloudImageView.image = cellImage
