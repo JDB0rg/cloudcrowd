@@ -25,6 +25,8 @@ class CloudImageController {
         
     }
     
+    var deviceCloudImages: [UIImage] = []
+    
 //    func createPhoto() -> UIImage {
 //        var returnImage: UIImage?
 //        let moc = CoreDataStack.context

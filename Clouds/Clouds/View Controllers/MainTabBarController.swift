@@ -9,7 +9,7 @@
 import UIKit
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate{
-
+    
     let cloudImageController = CloudImageController()
     let cloudDataController = CloudDataController()
     
@@ -20,9 +20,15 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate{
         
         for navController in viewControllers! {
             if let navController = navController as? UINavigationController,
-                let viewController = navController.viewControllers.first
+                let cloudController = navController.viewControllers[0] // .first
                     as? Injectable {
-                        viewController.inject(data: cloudDataController)
+                    cloudController.inject(data: cloudDataController)
+            }
+            
+            if let navController = navController as? UINavigationController,
+               let imageController = navController.viewControllers[0]
+                as? Injectable {
+                imageController.inject(data: cloudImageController)
             }
         }
     }

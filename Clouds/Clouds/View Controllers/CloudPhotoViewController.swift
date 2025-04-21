@@ -2,7 +2,7 @@
 //  CloudPhotoViewController.swift
 //  Clouds
 //
-//  Created by Madison Waters on 2/20/20.
+//  Created by Jonah Bergevin on 2/20/20.
 //  Copyright © 2020 EmPact. All rights reserved.
 //
 
@@ -15,6 +15,8 @@ class CloudPhotoViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var cloudImageController: CloudImageController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,16 +41,19 @@ class CloudPhotoViewController: UIViewController, UICollectionViewDelegate, UICo
 //    }()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // return fetchedPhotoResultsController.fetchedObjects?.count ?? 0
-        return 4
+        //return fetchedPhotoResultsController.fetchedObjects?.count ?? 0
+        return cloudImageController?.deviceCloudImages.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? CloudPhotoCollectionViewCell else { NSLog("Error dequeueing cell")
             return UICollectionViewCell()
         }
+        
+        guard let cloudImages = cloudImageController?.deviceCloudImages else { return UICollectionViewCell() }
+        
         cell.testLabel.text = "Test this thing"
-        cell.testImageView.image = UIImage(named: "cumulonimbus")
+        cell.testImageView.image = cloudImages[indexPath.row] //UIImage(named: "cumulonimbus")
         
         return cell
     }

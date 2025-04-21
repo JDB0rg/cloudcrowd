@@ -6,8 +6,10 @@
 //  Copyright © 2020 EmPact. All rights reserved.
 //
 
-import Foundation
 import CoreData
+import Foundation
+import UIKit
+
 
 extension Photo {
     
@@ -25,6 +27,20 @@ extension Photo {
         self.note = note
         self.timestamp = timestamp
         
+    }
+}
+
+public class ImageSaver: NSObject {
+    func writeToPhotoAlbum(image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveCompleted), nil)
+    }
+
+    @objc func saveCompleted(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            print("Error saving image: \(error)")
+        } else {
+            print("Image saved successfully")
+        }
     }
 }
 

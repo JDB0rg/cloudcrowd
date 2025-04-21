@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import PhotosUI
+import SwiftUI
 
 class IdentifyDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -16,6 +18,7 @@ class IdentifyDetailViewController: UIViewController, UIImagePickerControllerDel
     var photo: Photo?
     
     // MARK: - Controllers
+    let imageSaver = ImageSaver()
     var cloudImageController: CloudImageController?
     
     // MARK: - Outlets
@@ -102,12 +105,16 @@ class IdentifyDetailViewController: UIViewController, UIImagePickerControllerDel
         cloudImageController?.createPhoto(image: imageData, title: "", note: "")
         CoreDataStack.saveContext()
         
+        imageSaver.writeToPhotoAlbum(image: image)
+//        cloudImageController?.deviceCloudImages.append(image)
         
-        // 1. Convert to binary data which can be saved to CoreData
-        // 2. Fetch from CD and put into the Collection view.
         //let photo = Photo(entity: NSEntityDescription, insertInto: NSManagedObjectContext?)
         
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func setImage() {
+        
     }
     
     func grayscaleImage(_ image: UIImage) -> UIImage? {
