@@ -25,6 +25,14 @@ class CloudImageController {
         
     }
     
+    func setIdCloudImages() {
+        for name in localCloudImages {
+            let img = UIImage(named: name) ?? UIImage()
+            deviceCloudImages.append(img)
+        }
+        print("\(deviceCloudImages.count) cloud images")
+    }
+    
     var deviceCloudImages: [UIImage] = []
     
 //    func createPhoto() -> UIImage {

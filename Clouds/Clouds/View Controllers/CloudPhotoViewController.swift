@@ -21,6 +21,8 @@ class CloudPhotoViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        cloudImageController?.setIdCloudImages()
+        
         collectionView.delegate = self
         collectionView.dataSource = self
     }

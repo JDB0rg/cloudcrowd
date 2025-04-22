@@ -35,6 +35,7 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
         photoCollectionView.dataSource = self
         photoCollectionView.reloadData()
         
+        cloudImageController?.setIdCloudImages()
     }
     
     // MARK: - Actions
@@ -59,16 +60,17 @@ class IdentifyViewController: UIViewController, NSFetchedResultsControllerDelega
     
     // MARK:  Collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fetchedResultsController.fetchedObjects?.count ?? 0
-        //return cloudDataController?.clouds.count ?? 0
+        //return fetchedResultsController.fetchedObjects?.count ?? 0
+        return cloudImageController?.deviceCloudImages.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: IdentifyCollectionViewCell.reuseIdentifier, for: indexPath) as? IdentifyCollectionViewCell else { fatalError("Error dequeueing Cloud Image Cell in file: \(#file) at line: \(#line)") }
         
-        let cloudCells = fetchedResultsController.object(at: indexPath) // cloudDataController?.clouds[indexPath.row]
+        let cloudCells = cloudImageController?.deviceCloudImages[indexPath.row]
+        // fetchedResultsController.object(at: indexPath) // cloudDataController?.clouds[indexPath.row]
         
-        let cellImage = UIImage(data: cloudCells.image!)
+        let cellImage = cloudCells
         cell.testLabel.text = "nice test!"
         cell.CloudImageView?.image = cellImage
         
