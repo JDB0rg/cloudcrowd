@@ -103,7 +103,7 @@ class IdentifyDetailViewController: UIViewController, UIImagePickerControllerDel
         
         photo?.image = imageData
         cloudImageController?.createPhoto(image: imageData, title: "", note: "")
-        CoreDataStack.saveContext()
+        // FIXIT: Do not uncomment this until you fix the duplicate clouds issue // CoreDataStack.saveContext()
         
         imageSaver.writeToPhotoAlbum(image: image)
 //        cloudImageController?.deviceCloudImages.append(image)

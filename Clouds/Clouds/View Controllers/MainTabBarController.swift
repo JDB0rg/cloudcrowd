@@ -20,13 +20,13 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate{
         
         for navController in viewControllers! {
             if let navController = navController as? UINavigationController,
-                let cloudController = navController.viewControllers[0] // .first
+                let cloudController = navController.viewControllers.first
                     as? Injectable {
                     cloudController.inject(data: cloudDataController)
             }
             
             if let navController = navController as? UINavigationController,
-               let imageController = navController.viewControllers[0]
+               let imageController = navController.viewControllers.first
                 as? Injectable {
                 imageController.inject(data: cloudImageController)
             }

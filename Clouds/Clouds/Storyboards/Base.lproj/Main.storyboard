@@ -16,7 +16,6 @@
                     <tabBar key="tabBar" alpha="0.80000000000000004" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="CGh-Vi-WsE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="linkColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="3do-cT-u7p" kind="relationship" relationship="viewControllers" id="sFW-0j-0Kq"/>
@@ -386,17 +385,17 @@ Cg
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="j95-PJ-nOs" customClass="IdentifyCollectionViewCell" customModule="Clouds" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lukasz-lada-unsplash-cloud" translatesAutoresizingMaskIntoConstraints="NO" id="dUm-Eo-bCZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="90"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="lukasz-lada-unsplash-cloud" translatesAutoresizingMaskIntoConstraints="NO" id="dUm-Eo-bCZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="110"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWf-JS-gLx">
-                                                    <rect key="frame" x="0.0" y="75" width="110" height="35"/>
+                                                    <rect key="frame" x="0.0" y="90" width="180" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -405,7 +404,7 @@ Cg
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="dUm-Eo-bCZ" secondAttribute="bottom" constant="20" id="Ce4-te-tbw"/>
-                                            <constraint firstItem="GWf-JS-gLx" firstAttribute="top" secondItem="j95-PJ-nOs" secondAttribute="top" constant="75" id="EJM-43-lYZ"/>
+                                            <constraint firstItem="GWf-JS-gLx" firstAttribute="top" secondItem="j95-PJ-nOs" secondAttribute="top" constant="90" id="EJM-43-lYZ"/>
                                             <constraint firstAttribute="trailing" secondItem="GWf-JS-gLx" secondAttribute="trailing" id="Gx6-Qo-uov"/>
                                             <constraint firstAttribute="bottom" secondItem="GWf-JS-gLx" secondAttribute="bottom" id="Ic8-jj-56C"/>
                                             <constraint firstItem="dUm-Eo-bCZ" firstAttribute="leading" secondItem="j95-PJ-nOs" secondAttribute="leading" id="JK8-Z1-P6i"/>
@@ -413,6 +412,7 @@ Cg
                                             <constraint firstItem="dUm-Eo-bCZ" firstAttribute="top" secondItem="j95-PJ-nOs" secondAttribute="top" id="f9c-SB-pwa"/>
                                             <constraint firstAttribute="trailing" secondItem="dUm-Eo-bCZ" secondAttribute="trailing" id="pWt-mX-j3P"/>
                                         </constraints>
+                                        <size key="customSize" width="180" height="130"/>
                                         <connections>
                                             <outlet property="CloudImageView" destination="dUm-Eo-bCZ" id="6jk-gL-HGd"/>
                                             <outlet property="testLabel" destination="GWf-JS-gLx" id="ANg-Pe-NoC"/>
@@ -496,19 +496,19 @@ Cg
                                                 <rect key="frame" x="0.0" y="118" width="314" height="180"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zns-5W-FXL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="43.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="28"/>
                                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-8J-pqh">
-                                                        <rect key="frame" x="0.0" y="53.5" width="314" height="28"/>
+                                                        <rect key="frame" x="0.0" y="38" width="314" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4zc-Ci-Gd5">
-                                                        <rect key="frame" x="0.0" y="91.5" width="314" height="88.5"/>
+                                                        <rect key="frame" x="0.0" y="66" width="314" height="114"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <color key="textColor" systemColor="labelColor"/>
@@ -646,9 +646,6 @@ Cg
         </systemColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

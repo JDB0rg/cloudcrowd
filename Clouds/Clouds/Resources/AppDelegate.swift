@@ -7,17 +7,22 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let moc = CoreDataStack.context
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        UITabBar.appearance().barTintColor = .blue
-//        UITabBar.appearance().tintColor = .blue
+        UITabBar.appearance().barTintColor = .blue
+        UITabBar.appearance().tintColor = .blue
+        
+//        let moc = CoreDataStack.context
+        let fetchRequest: NSFetchRequest<Cloud> = Cloud.fetchRequest()
+        let cDFetchRequestService = CDFetchRequestService(managedContext: moc, fetchRequest: fetchRequest)
         
         return true
     }

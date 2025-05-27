@@ -1,13 +1,13 @@
 [
     
     {
-        "category" : "Low-level clouds",
-        "subcategory" : "General Cloud Category",
+        "category" : "Low-Level, Vertical Development Clouds",
+        "subcategory" : "Cumuliform (heap-like)",
         "name" : "Cumulus",
         "prefix" : "Cu",
         "composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
         "formation" : "Their name comes from the latin word cumulo meaning heap. Cumulus clouds form because of atmospheric convection. Air warmed by the ground begins to rise. As it does so the temperature of the air will start to drop. If the rising hot air reaches a certain level then relative humidity reaches saturation and water vapor is created resulting in a cumulus cloud.",
-        "appearance" : "Individual mound-like clouds with flat bottoms and round tops often described as puffy, fluffy or pillowy. ",
+        "appearance" : "White, fluffy clouds with flat bases and rounded tops, often isolated. Common in fair weather, though can grow larger. Bright in sunlight, darker underneath as they develop, often described as puffy or pillowy. ",
         "weather" : {
             "precipitation" : "",
             "temperature" : "",
@@ -22,13 +22,13 @@
     },
     
     {
-        "category" : "Low-level clouds",
-        "subcategory" : "Cloud Subcategory",
+        "category" : "Vertical Development Clouds",
+        "subcategory" : "Cumuliform (heap-like)",
         "name" : "Cumulonimbus",
         "prefix" : "Cn",
         "composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
         "formation" : "With enough atmospheric instability, moisture, and lift strong updrafts can develop in cumulus clouds leading to thunderstorm and heavy rain-producing formations",
-        "appearance" : "Cumulus clouds that have grown to towering heights and usually mean a storm is coming",
+        "appearance" : "Towering, dark-bottomed clouds with flat anvil-shaped tops. Extremely tall and dense. Bring thunderstorms, heavy rain, hail, lightning, and sometimes tornadoes. Often appear ahead of cold fronts or in summer heat. They usually develop from cumulus clouds.",
         "weather" : {
             "precipitation" : "",
             "temperature" : "",
@@ -43,13 +43,13 @@
     },
     
     {
-        "category" : "Low-level clouds",
-        "subcategory" : "General Cloud Category",
+        "category" : "Low-Level Clouds (Bases: Surface – 6,500 ft)",
+        "subcategory" : "Stratiform (layered),
         "name" : "Stratus",
         "prefix" : "St",
         "composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
         "formation" : "Latin prefix strato-, meaning layer. Warm moist air rises and depressurizes and settles lower to the ground according to ideal temperatures",
-        "appearance" : "Develop horizontally in a flat uniform sheet formation resembling a gray layer of cloud cover with little to no precipitation or drizzle",
+        "appearance" : "Flat, uniform gray cloud layer that blankets the sky developing horizontally, often touching the ground as fog. Usually brings light drizzle or mist; lacks distinct features or breaks.",
         "weather" : {
             "precipitation" : "very little to no precipitation",
             "temperature" : "varies",
@@ -64,13 +64,13 @@
     },
     
     {
-        "category": "Low to mid-level",
-        "subcategory": "Rain cloud",
+        "category": "Low-Level Clouds (Bases: Surface – 6,500 ft),
+        "subcategory": "Stratiform (layered)",
         "name": "Nimbostratus",
         "prefix": "Ns",
         "composition": ["Water droplets and ice crystals"],
         "formation": "Warm, moist air slowly rises over a broad area",
-        "appearance": "Thick, dark, gray blanket-like clouds",
+        "appearance": "Thick, dark gray clouds covering the sky completely. No distinct shape or features. Bring steady, prolonged rain or snow, often over large areas, with little variation in appearance.",
         "weather" : {
             "precipitation" : "Continuous, steady precipitation",
             "temperature" : "",
@@ -85,13 +85,13 @@
     },
     
     {
-        "category": "Mid-level",
-        "subcategory": "Layered cloud",
+        "category": "Mid-Level Clouds (Bases: 6,500 – 20,000 ft)",
+        "subcategory": "Stratiform (layered)",
         "name": "Altostratus",
         "prefix": "As",
         "composition": ["Water droplets and ice crystals"],
         "formation": "Large-scale lifting of moist air, often preceding a warm front",
-        "appearance": "Gray or blue-gray sheet, sun may be visible but blurred",
+        "appearance": "Gray or blue-gray sheets covering the whole sky, with a dim sun or moon visible. Typically linked to widespread, steady precipitation in the form of rain or snow.",
         "weather" : {
             "precipitation" : "Often brings light precipitation",
             "temperature" : "",
@@ -106,13 +106,13 @@
     },
     
     {
-        "category": "Mid-level",
-        "subcategory": "Puffy cloud",
+        "category": "Mid-Level Clouds (Bases: 6,500 – 20,000 ft)",
+        "subcategory": "Cumuliform (heap-like)",
         "name": "Altocumulus",
         "prefix": "Ac",
         "composition": ["Water droplets can contain ice"],
         "formation": "Convection and turbulence in the mid-troposphere",
-        "appearance": "White or gray patches, rolls or rounded masses",
+        "appearance": "White or gray patches, rolls or rounded clouds, often in layers or groups. May look like a field of cotton balls. Can precede thunderstorms when seen in humid morning skies.",
         "weather" : {
             "precipitation" : "Usually fair, but can precede thunderstorms",
             "temperature" : "",
@@ -127,13 +127,13 @@
     },
     
     {
-        "category" : "Low-level clouds",
-        "subcategory" : "Cloud Subcategory",
+        "category" : "Low-Level Clouds (Bases: Surface – 6,500 ft)",
+        "subcategory" : "Stratocumuliform (layered with rolls or lumps)",
         "name" : "Stratocumulus",
         "prefix" : "Sc",
         "composition" : ["liquid water droplets", "super-cooled droplets", "graupel (ice-water mixture)", "ice crystal particles"],
         "formation" : "Latin prefix strato-, meaning layer. Stratocumulus clouds can form when a layer of stratus clouds begins to breaks up or striate. They can also be formed as cumulus clouds begin to flatten due to inversion of temperature or wind shear, and then become stratocumulus clouds",
-        "appearance" : "Develop horizontally in a flat uniform sheet formation resembling a gray layer of cloud cover with little to no precipitation or drizzle",
+        "appearance" : "Low, lumpy gray or white clouds in groups or layers, often with gaps of blue sky. Rarely bring more than light rain or drizzle. Appear after stormy or unsettled weather.",
         "weather" : {
             "precipitation" : "very little to no precipitation",
             "temperature" : "varies",
@@ -148,13 +148,13 @@
     },
     
     {
-        "category" : "High Altitude clouds",
-        "subcategory" : "General Cloud Category",
+        "category" : "High-Level Clouds (Bases: 20,000 – 40,000 ft)",
+        "subcategory" : "Cirriform (hair-like or fibrous)",
         "name" : "Cirrus",
         "prefix" : "Ci",
         "composition" : ["ice crystals", "ice particles"],
         "formation" : "Latin meaning curl of hair or fringe. Cirrus clouds form from the ascent of dry air, making the small quantity of water vapour in the air undergo deposition into ice (to change from a gas directly into a solid). Cirrus is made up completely of ice crystals, which provides their white colour and form in a wide range of shapes and sizes.",
-        "appearance" : "Cirrus clouds are white, wispy, and feathery, and can look like hair or feathers in the wind. They can appear in patches or narrow bands, and can have a silky or fibrous sheen.",
+        "appearance" : "Thin, wispy and feathery strands high in the sky, bright white in sunlight. They can appear in patches or narrow bands, and can have a silky or fibrous sheen. No precipitation below, but often signal approaching changes in weather or frontal systems within the next day.",
         "weather" : {
             "precipitation" : "They may predict the arrival or rainstorms.",
             "temperature" : "varies",
@@ -169,13 +169,13 @@
     },
     
     {
-        "category": "High-level",
-        "subcategory": "Layered/Ice crystal cloud",
+        "category": "High-Level Clouds (Bases: 20,000 – 40,000 ft)",
+        "subcategory": "Stratiform (layered)",
         "name": "Cirrostratus",
         "prefix": "Cs",
         "composition": ["Ice crystals"],
         "formation": "Gradual lifting of a wide air mass, often preceding a warm front",
-        "appearance": "Transparent, thin veil-like, can cover whole sky",
+        "appearance": "Milky, transparent veil covering much of the sky; often whitish and smooth. Produces halos around the sun or moon. Indicates moisture aloft and often precedes widespread rain or snow.",
         "weather" : {
             "precipitation" : "Often precedes precipitation; halo phenomenon around the sun/moon.",
             "temperature" : "",
@@ -190,13 +190,13 @@
     },
     
     {
-        "category": "High-level",
-        "subcategory": "Puffy/Ice crystal cloud",
+        "category": "High-Level Clouds (Bases: 20,000 – 40,000 ft)",
+        "subcategory": " Cumuliform (heap-like)",
         "name": "Cirrocumulus",
         "prefix": "Cc",
         "composition": ["Ice crystals (some supercooled water possible)"],
         "formation": "Turbulence in upper troposphere",
-        "appearance": "Small, white puffs, often in rows or ripples (mackerel sky)",
+        "appearance": "Small, white patches or puffs arranged in ripples or rows. Look like fish scales ('mackerel sky'). Rarely bring precipitation but may signal instability or approaching storms, especially when seen with other clouds.",
         "weather" : {
             "precipitation" : "Fair weather but can suggest storm development",
             "temperature" : "",

@@ -34,6 +34,7 @@
 		11B2658F237CB97600006F61 /* CloudDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2658E237CB97600006F61 /* CloudDetailViewController.swift */; };
 		11B26597237E62DE00006F61 /* CloudData.json in Resources */ = {isa = PBXBuildFile; fileRef = 11B26596237E62DE00006F61 /* CloudData.json */; };
 		8C28CADE2437E4E600633679 /* CloudImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28CADD2437E4E600633679 /* CloudImageDelegate.swift */; };
+		8C4771442DBACABC00D224C5 /* CDFetchRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4771432DBACABC00D224C5 /* CDFetchRequestService.swift */; };
 		8C6F39192423202500A6F302 /* Identify+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F39182423202500A6F302 /* Identify+Image.swift */; };
 		8C737ABC24DB6A1F00F32E9B /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C737ABB24DB6A1F00F32E9B /* Protocols.swift */; };
 		8C737ABE24E054B800F32E9B /* Photo+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C737ABD24E054B800F32E9B /* Photo+Convenience.swift */; };
@@ -80,6 +81,7 @@
 		11B2658E237CB97600006F61 /* CloudDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudDetailViewController.swift; sourceTree = "<group>"; };
 		11B26596237E62DE00006F61 /* CloudData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CloudData.json; sourceTree = "<group>"; };
 		8C28CADD2437E4E600633679 /* CloudImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudImageDelegate.swift; sourceTree = "<group>"; };
+		8C4771432DBACABC00D224C5 /* CDFetchRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDFetchRequestService.swift; sourceTree = "<group>"; };
 		8C6F39182423202500A6F302 /* Identify+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Identify+Image.swift"; sourceTree = "<group>"; };
 		8C737ABB24DB6A1F00F32E9B /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		8C737ABD24E054B800F32E9B /* Photo+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+Convenience.swift"; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				11AFA65D23FF6C3900159423 /* CoreData */,
+				8C4771432DBACABC00D224C5 /* CDFetchRequestService.swift */,
 				112D3FD02298E849000F7DA6 /* CloudObject.swift */,
 				8CBDA6D72488605500150386 /* PhotoObject.swift */,
 				112D3FD2229DA597000F7DA6 /* User.swift */,
@@ -347,6 +350,7 @@
 				112280C82360F356001ED0AD /* Border.swift in Sources */,
 				8CD2392224E87A1200092E0A /* IdentifyDetailViewController.swift in Sources */,
 				116F6D2723A048140094651F /* CloudImageController.swift in Sources */,
+				8C4771442DBACABC00D224C5 /* CDFetchRequestService.swift in Sources */,
 				8CBDA6DA249C15C200150386 /* CloudsEnum.swift in Sources */,
 				8C28CADE2437E4E600633679 /* CloudImageDelegate.swift in Sources */,
 				8CBDA6D82488605500150386 /* PhotoObject.swift in Sources */,

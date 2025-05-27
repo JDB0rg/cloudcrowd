@@ -7,13 +7,16 @@
 //
 
 import Foundation
+import CoreData
 
-class CloudDataController {
+class CloudDataController: NSObject {
     
-    init() {
+    override init() {
+        super .init()
         self.decodeClouds()
     }
     
+    let fetchRequest: NSFetchRequest<Cloud> = Cloud.fetchRequest()
     var userDefaults = UserDefaults.standard
     var clouds: [CloudObject] = []
     
@@ -72,4 +75,6 @@ class CloudDataController {
                 NSLog("Error reading Cloud data from JSON file \(#line)")
             }
     }
+    
 }
+
